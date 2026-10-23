@@ -72,8 +72,10 @@ include:
           - dongle_prospector/dongle_prospector_common.conf
           - dongle_prospector_layouts/dongle_prospector_layout_operator.conf
           - dongle_prospector/dongle_prospector_no_sensor.conf
+          - dongle_prospector/dongle_prospector_touch.conf
         extra_dtc_overlay_files:
           - dongle_prospector/dongle_prospector_no_sensor.overlay
+          - dongle_prospector/dongle_prospector_touch.overlay
 
 # ── Prospector Nice Nano v2 Dongle with APDS9960 ambient light sensor ──────────────────────────
   - name: dongle_prospector_nano_sensor

@@ -1,0 +1,94 @@
+/* Prospector Touch: Pro Micro nRF52840 / nice_nano//zmk
+ * OVERRIDES 280Zo/prospector-zmk-module's incompatible default nice!nano wiring.
+ * Intended to be applied after dongle_prospector_no_sensor.overlay.
+ * This file assumes 280Zo's module overlays define labels spi3_default,
+ * spi3_sleep, pwm1_default, pwm1_sleep, i2c1_default, i2c1_sleep,
+ * and path /mipi_dbi. Do not use with an unrelated module.
+ */
+
+/* Existing proven Arduino SPI wiring:
+ * LCD_DIN=P0.22; CLK=P0.17; CS=P0.24; DC=P1.04; RST=P1.06.
+ * Unused SPI MISO reassigned to P0.20 so it cannot conflict with LCD_DC.
+ */
+&spi3_default {
+    group1 {
+        psels = <NRF_PSEL(SPIM_SCK, 0, 17)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 22)>,
+                <NRF_PSEL(SPIM_MISO, 0, 20)>;
+    };
+};
+
+&spi3_sleep {
+    group1 {
+        psels = <NRF_PSEL(SPIM_SCK, 0, 17)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 22)>,
+                <NRF_PSEL(SPIM_MISO, 0, 20)>;
+    };
+};
+
+&spi3 {
+    cs-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>;
+};
+
+&{/mipi_dbi} {
+    dc-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
+    reset-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+};
+
+/* Prospector's PWM brightness engine already drives disp_bl -> pwm1.
+ * P0.29 is currently free when I2C moves onto P1.00 / P0.11.
+ * Connect LCD_BL ONLY after checking module's BL circuit / GPIO current:
+ * a transistor/driver may be needed; do NOT parallel direct 3.3V and GPIO.
+ */
+&pwm1_default {
+    group1 {
+        psels = <NRF_PSEL(PWM_OUT0, 0, 29)>;
+        /* Keep original module's 'nordic,invert' setting until validated. */
+    };
+};
+
+&pwm1_sleep {
+    group1 {
+        psels = <NRF_PSEL(PWM_OUT0, 0, 29)>;
+    };
+};
+
+/* Touch I2C is proven on the Arduino setup at P1.00/P0.11. */
+&i2c1_default {
+    group1 {
+        psels = <NRF_PSEL(TWIM_SCL, 0, 11)>,
+                <NRF_PSEL(TWIM_SDA, 1, 0)>;
+    };
+};
+
+&i2c1_sleep {
+    group1 {
+        psels = <NRF_PSEL(TWIM_SCL, 0, 11)>,
+                <NRF_PSEL(TWIM_SDA, 1, 0)>;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    prospector_touch: cst816s@15 {
+        compatible = "hynitron,cst816s";
+        reg = <0x15>;
+        status = "okay";
+        rst-gpios = <&gpio1 13 GPIO_ACTIVE_LOW>;
+        irq-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,touch = &prospector_touch;
+    };
+    prospector_touch_pointer: prospector_touch_pointer {
+        compatible = "zephyr,lvgl-pointer-input";
+        input = <&prospector_touch>;
+        /* Rotation mapping is handled by Zephyr's LVGL pointer driver.
+         * If the screen is mirrored, enable swap-xy/invert-x/invert-y
+         * after confirming raw touch coordinates on actual hardware.
+         */
+    };
+};
