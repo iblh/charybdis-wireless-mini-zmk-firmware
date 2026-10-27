@@ -1,0 +1,43 @@
+{
+  "artifact": "prospector-touch-input-modes.uf2",
+  "sha256": "256bd0cc2646e6db0fde1e4a9623175ce23ccc3a33b0de5217ecef862002e1db",
+  "release": "T5-01",
+  "keymap": "MAC-DV / WIN-DV / GAME",
+  "target": "charybdis_dongle prospector_adapter / nice_nano//zmk",
+  "source_id": "6FF389",
+  "build_time_america_los_angeles": "10-24 23:16",
+  "application_start": "0x26000",
+  "application_end": "0xa0500",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 51968,
+  "flash_linked_bytes": 500880,
+  "ram_static_bytes": 211714,
+  "lvgl_pool_bytes": 65536,
+  "dependencies": {
+    "zmk": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+    "pmw3610": "f6e234367b22508b5c0a6bcc82437c64f320089b"
+  },
+  "source_baseline_heads": {
+    "firmware": "f4daf0be2b6f80fe41268e294e505ca79913f5cf",
+    "module": "ecbb1df8bd4972f324ae0981f378c6bf4e97bf3f"
+  },
+  "working_changes": "Preserved; SOURCE ID hashes working source/config, not just HEAD",
+  "tests": [
+    "single-target Docker/West PASS",
+    "UF2 bootloader guard PASS",
+    "production mode worker with host shims PASS",
+    "native ZMK mod-morph 36 positions x256 modifier masks x2 profiles x2 release orders PASS",
+    "production editing shortcut behavior with host shims PASS",
+    "production device service QWERTY and three-mode snapshots PASS",
+    "real LVGL device/mode/confirmation pointer-timer tests PASS with all three layouts allocated (mock services)",
+    "real-source three-layout previews visually checked",
+    "final ELF BLE position-event branch reaches __wrap_raise_zmk_position_state_changed"
+  ],
+  "hardware_acceptance": "PENDING: keyboards are available but unflashed/unpaired; no physical typing or new-image boot claimed",
+  "rollback": "prospector-touch-device-page-qwerty.uf2",
+  "companion_peripherals": [
+    "prospector-touch-left-peripheral.uf2",
+    "prospector-touch-right-peripheral.uf2"
+  ]
+}

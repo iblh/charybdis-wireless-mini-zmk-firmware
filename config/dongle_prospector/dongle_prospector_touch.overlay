@@ -86,9 +86,9 @@
     prospector_touch_pointer: prospector_touch_pointer {
         compatible = "zephyr,lvgl-pointer-input";
         input = <&prospector_touch>;
-        /* Rotation mapping is handled by Zephyr's LVGL pointer driver.
-         * If the screen is mirrored, enable swap-xy/invert-x/invert-y
-         * after confirming raw touch coordinates on actual hardware.
-         */
+        /* With the display rotated 270 degrees, this panel's touch matrix is
+         * mirrored on both screen axes. Preserve the axes and invert both. */
+        invert-x;
+        invert-y;
     };
 };

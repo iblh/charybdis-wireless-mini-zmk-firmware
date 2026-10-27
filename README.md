@@ -1,3 +1,30 @@
+# Prospector Touch Edition / Charybdis firmware
+
+本分支面向 Pro Micro nRF52840（nice!nano v2 兼容）+ Waveshare ST7789V2/CST816T，
+不使用环境光传感器。硬件引脚以 `config/dongle_prospector/dongle_prospector_touch.overlay` 为准。
+
+- [项目入口、构建与历史验证记录](docs/prospector-touch/README.md)
+- [MAC-DV / WIN-DV / GAME 键位、刷写及首次配对](docs/prospector-touch/docs/11-input-modes-guide.md)
+- [当前验收状态](docs/prospector-touch/docs/06-roadmap-and-acceptance.md)
+- [T5-01 候选的校验值及预览](docs/prospector-touch/releases/T5-01/README.md)
+
+Touch UI 支持 Classic / Field / Operator，左右滑切换外观，下滑亮度、上滑设备页。
+T4-01 的设备页和确认刷机已由用户验证；T5-01 三输入模式仍需真实键盘验收。
+仓库的 `config/west.yml` 固定了本地测试使用的依赖版本。
+
+此仓库负责硬件、键位和构建；UI/行为在独立的
+[module 仓库](https://github.com/iblh/prospector-zmk-module/tree/feat/touch-no-sensor)。
+工作区以 `firmware/`、`module/` 两个 sibling clone 组织。原 QWERTY 键位仍保留。
+
+```bash
+# 从两个 clone 的共同父目录运行，只编译 Touch Dongle
+PROSPECTOR_KEYMAP=touch_modes SKIP_WEST_UPDATE=true bash firmware/docs/prospector-touch/scripts/build-touch-only.sh
+```
+
+以下为上游通用说明；其中 QWERTY 布局、传感器和蓝牙主机配置不代表本 Touch 模式配置。
+
+---
+
 [![.github/workflows/build.yml](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions/workflows/build.yml/badge.svg)](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions/workflows/build.yml)
 
 ## Intro

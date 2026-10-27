@@ -1,0 +1,29 @@
+{
+  "captured_on": "2026-10-23",
+  "firmware": {
+    "repo": "iblh/charybdis-wireless-mini-zmk-firmware",
+    "branch": "feat/touch-no-sensor",
+    "sha": "f4daf0be2b6f80fe41268e294e505ca79913f5cf",
+    "working_dir": "~/Workspace/Lab/prospector-pro/firmware"
+  },
+  "module": {
+    "repo": "iblh/prospector-zmk-module",
+    "branch": "feat/touch-no-sensor",
+    "sha": "ecbb1df8bd4972f324ae0981f378c6bf4e97bf3f",
+    "working_dir": "~/Workspace/Lab/prospector-pro/module"
+  },
+  "ci": {
+    "run_id": 39911723815,
+    "conclusion": "success",
+    "artifact_name": "firmware-dongle_prospector_nano_no_sensor-qwerty",
+    "artifact_id": 12482963870,
+    "uf2_filename": "charybdis_dongle prospector_adapter-qwerty.uf2"
+  },
+  "device": {
+    "mcu": "nRF52840 Pro Micro / nice_nano-compatible",
+    "screen": "Waveshare 1.69 ST7789V2 240x280",
+    "touch": "CST816 class I2C address 0x15",
+    "bootloader": "UF2 0.6.0, S140 6.1.1"
+  },
+  "truth_note": "Source is user local Git forks, snapshots in bundle not authoritative; ZMK LCD boots, touch/full product features unverified."
+}

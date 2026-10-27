@@ -307,6 +307,11 @@ jobs:
           $SNIPPET_OPTION
         # ──────────────────────────────────────────────────────────────
 
+        # This clone's UF2 bootloader has a stricter write limit than the linker.
+        if [[ "$NM" == dongle_prospector_touch_modes || "$NM" == dongle_prospector_nano_no_sensor ]] && [[ "$SH" == "charybdis_dongle prospector_adapter" ]]; then
+          python3 "$GITHUB_WORKSPACE/docs/prospector-touch/scripts/verify-dongle-uf2.py" "$BUILD_DIR/zephyr/zmk.uf2"
+        fi
+
         ART=$(if [[ -f "$BUILD_DIR/zephyr/zmk.uf2" ]]; then echo zmk.uf2; else echo zmk.bin; fi)
         EXT="${ART##*.}"
         # Include keymap in filename so multiple keymaps for the same shield don't overwrite.

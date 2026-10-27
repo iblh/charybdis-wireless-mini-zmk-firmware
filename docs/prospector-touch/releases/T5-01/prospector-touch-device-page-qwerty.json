@@ -1,0 +1,21 @@
+{
+  "artifact": "prospector-touch-device-page-qwerty.uf2",
+  "sha256": "c08d5828ea1867596cb55b23d74ccba40b499683a0ae28246d601dc754978b73",
+  "release": "T4-01",
+  "keymap": "QWERTY",
+  "target": "charybdis_dongle prospector_adapter / nice_nano//zmk",
+  "source_id": "8EE7C5",
+  "build_time_america_los_angeles": "10-24 22:37",
+  "application_start": "0x26000",
+  "application_end": "0xa4200",
+  "bootloader_limit": "0xAD000",
+  "flash_linked_bytes": 516528,
+  "ram_static_bytes": 209266,
+  "tests": [
+    "single-target Docker/West PASS",
+    "bootloader address guard PASS",
+    "actual LVGL pointer/timer confirmation tests PASS (mock reboot)",
+    "actual device service worker tests PASS (mock platform)"
+  ],
+  "hardware_acceptance": "USER CONFIRMED: device page and two-step NICENANO entry; keyboard BLE/HID not assessed"
+}

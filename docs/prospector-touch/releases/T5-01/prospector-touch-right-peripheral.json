@@ -1,0 +1,25 @@
+{
+  "artifact": "prospector-touch-right-peripheral.uf2",
+  "sha256": "a6dedb6ceacbfbb7688ee53639dd3978c364ad85e24e66214d1ff117798ef3b9",
+  "bundle": "T5-01",
+  "target": "charybdis_right_dongle / nice_nano//zmk",
+  "role": "right BLE peripheral; NOT Dongle; NOT direct-to-host BT central",
+  "keymap": "Original qwerty as DTS build input; input positions interpreted by Dongle touch_modes",
+  "dependencies": {
+    "zmk": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+    "pmw3610": "f6e234367b22508b5c0a6bcc82437c64f320089b"
+  },
+  "application_start": "0x26000",
+  "application_end": "0x56600",
+  "bootloader_limit": "0xAD000",
+  "flash_linked_bytes": 198084,
+  "ram_static_bytes": 38608,
+  "tests": [
+    "single-target Docker/West PASS",
+    "UF2 address/header/vector guard PASS",
+    "compiled role is peripheral; mode service not enabled"
+  ],
+  "hardware_acceptance": "PENDING: first flash and pairing not yet performed",
+  "settings_reset": false
+}

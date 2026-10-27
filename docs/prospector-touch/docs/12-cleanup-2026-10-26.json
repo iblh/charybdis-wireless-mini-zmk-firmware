@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-26",
+  "deleted": [
+    {
+      "path": "module/.render-cache",
+      "allocated_bytes": 22102016,
+      "reason": "Generated renderer cache or peripheral CMake/object output; reproducible from source"
+    },
+    {
+      "path": "firmware/prospector-zmk-module/.render-cache",
+      "allocated_bytes": 22048768,
+      "reason": "Generated renderer cache or peripheral CMake/object output; reproducible from source"
+    },
+    {
+      "path": "firmware/build/operator-host-cache",
+      "allocated_bytes": 47489024,
+      "reason": "Generated renderer cache or peripheral CMake/object output; reproducible from source"
+    },
+    {
+      "path": "firmware/build/prospector-left-peripheral",
+      "allocated_bytes": 40366080,
+      "reason": "Generated renderer cache or peripheral CMake/object output; reproducible from source"
+    },
+    {
+      "path": "firmware/build/prospector-right-peripheral",
+      "allocated_bytes": 41541632,
+      "reason": "Generated renderer cache or peripheral CMake/object output; reproducible from source"
+    },
+    {
+      "path": "firmware/build/prospector-peripheral-config",
+      "allocated_bytes": 274432,
+      "reason": "Generated peripheral staging configuration; build script recreates it"
+    },
+    {
+      "path": "firmware/build/prospector-touch-candidate-qwerty.uf2",
+      "allocated_bytes": 929792,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-light-button-qwerty.uf2",
+      "allocated_bytes": 929792,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-styled-light-qwerty.uf2",
+      "allocated_bytes": 933888,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-touchmap-qwerty.uf2",
+      "allocated_bytes": 933888,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-ui-polish-qwerty.uf2",
+      "allocated_bytes": 933888,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-four-layouts-qwerty.uf2",
+      "allocated_bytes": 1515520,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-layout-lazy-qwerty.uf2",
+      "allocated_bytes": 1515520,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-four-layouts-compact-qwerty.uf2",
+      "allocated_bytes": 1101824,
+      "reason": "Superseded test image; current release and two accepted rollback images retained"
+    },
+    {
+      "path": "firmware/build/all-layout-device.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/device-flash.png",
+      "allocated_bytes": 12288,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/device-flash.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/device-info.png",
+      "allocated_bytes": 12288,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/device-info.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/input-mode-device.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/input-mode-picker.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/mode-classic-win.raw",
+      "allocated_bytes": 331776,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/mode-field-fn.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/mode-operator-mac.raw",
+      "allocated_bytes": 270336,
+      "reason": "Raw LVGL framebuffer; current PNG previews retained"
+    },
+    {
+      "path": "firmware/build/operator-lazy-check.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/operator-three-layouts.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-operator-no-theme-before.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-operator-no-theme-styled.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-operator-touch-v2.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-operator-touch.png",
+      "allocated_bytes": 16384,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-touch-panel-no-theme-styled.png",
+      "allocated_bytes": 8192,
+      "reason": "Superseded UI preview"
+    },
+    {
+      "path": "firmware/build/prospector-peripheral-console.log",
+      "allocated_bytes": 135168,
+      "reason": "Duplicate console or superseded test log; final build/test records retained"
+    },
+    {
+      "path": "firmware/build/prospector-mode-ui-tests.log",
+      "allocated_bytes": 40960,
+      "reason": "Duplicate console or superseded test log; final build/test records retained"
+    },
+    {
+      "path": "firmware/build/prospector-touch-last-build.log",
+      "allocated_bytes": 12288,
+      "reason": "Duplicate console or superseded test log; final build/test records retained"
+    },
+    {
+      "path": ".DS_Store",
+      "allocated_bytes": 8192,
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "path": "module/tools/__pycache__",
+      "allocated_bytes": 40960,
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "path": "prospector-pro-handoff/scripts/__pycache__",
+      "allocated_bytes": 8192,
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "path": "firmware/prospector-zmk-module/tools/__pycache__",
+      "allocated_bytes": 40960,
+      "reason": "Finder metadata or Python bytecode cache"
+    }
+  ],
+  "moved": [
+    {
+      "from": "firmware/build/input-mode-device.png",
+      "to": "firmware/build/previews/input-mode-device.png"
+    },
+    {
+      "from": "firmware/build/input-mode-picker.png",
+      "to": "firmware/build/previews/input-mode-picker.png"
+    },
+    {
+      "from": "firmware/build/mode-classic-win.png",
+      "to": "firmware/build/previews/mode-classic-win.png"
+    },
+    {
+      "from": "firmware/build/mode-field-fn.png",
+      "to": "firmware/build/previews/mode-field-fn.png"
+    },
+    {
+      "from": "firmware/build/mode-operator-mac.png",
+      "to": "firmware/build/previews/mode-operator-mac.png"
+    },
+    {
+      "from": "firmware/build/prospector-input-modes-build.log",
+      "to": "firmware/build/reports/prospector-input-modes-build.log"
+    },
+    {
+      "from": "firmware/build/prospector-all-layout-tests.log",
+      "to": "firmware/build/reports/prospector-all-layout-tests.log"
+    },
+    {
+      "from": "firmware/build/prospector-peripheral-build.log",
+      "to": "firmware/build/reports/prospector-peripheral-build.log"
+    }
+  ],
+  "preserved_uf2": {
+    "prospector-touch-input-modes.uf2": "256bd0cc2646e6db0fde1e4a9623175ce23ccc3a33b0de5217ecef862002e1db",
+    "prospector-touch-left-peripheral.uf2": "a08fafd75ea6732cebd80596c7761928c449d4beca0c6de9e91f320c60fc6a9f",
+    "prospector-touch-right-peripheral.uf2": "a6dedb6ceacbfbb7688ee53639dd3978c364ad85e24e66214d1ff117798ef3b9",
+    "prospector-touch-device-page-qwerty.uf2": "c08d5828ea1867596cb55b23d74ccba40b499683a0ae28246d601dc754978b73",
+    "prospector-touch-three-layouts-qwerty.uf2": "cc8b90ae7ee4e7fd0bc210d600faad71df08b57dc7887cb63800d1c47e4d7f74"
+  },
+  "source_verification": {
+    "firmware": "79 tracked/untracked source files unchanged; only .gitignore intentionally extended",
+    "module": "154 tracked/untracked source files unchanged; only .gitignore intentionally extended"
+  },
+  "freed_allocated_bytes": 185257984
+}
