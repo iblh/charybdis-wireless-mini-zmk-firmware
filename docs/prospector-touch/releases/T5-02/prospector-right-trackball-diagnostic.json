@@ -1,0 +1,34 @@
+{
+  "artifact": "prospector-right-trackball-diagnostic.uf2",
+  "sha256": "64644f7d415a34508138686558f8946e8166b79d710686d2f3f133c940307f7f",
+  "created_on": "2026-10-27",
+  "target": "charybdis_right_dongle / nice_nano//zmk",
+  "dependencies": {
+    "zmk": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+    "pmw3610": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+    "prospector_module": "6299108bef48df59bdb22ef85ea57199b9ced598"
+  },
+  "application_start": "0x26000",
+  "application_end": "0x5fd00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 316160,
+  "flash_linked_bytes": 236712,
+  "ram_static_bytes": 74392,
+  "hardware_acceptance": "PENDING; sensor root cause remains unknown until initialization/motion logs are collected",
+  "settings_reset": false,
+  "diagnostic_only": true,
+  "role": "right BLE peripheral with USB CDC serial logs; NOT Dongle",
+  "sensor": "PMW3610",
+  "sensor_pins_unchanged": true,
+  "sensor_extra_power_up_delay_ms": 0,
+  "log_flush_startup_delay_ms": 10000,
+  "log_buffer_bytes": 16384,
+  "usb_cdc_ring_bytes": 8192,
+  "tests": [
+    "Docker/West right diagnostic target PASS",
+    "compiled BLE peripheral role, PMW3610 debug logs, USB CDC, unchanged sensor init option and no USB keyboard HID verified",
+    "UF2 guard PASS"
+  ],
+  "rollback": "prospector-touch-right-peripheral.uf2"
+}

@@ -4,6 +4,14 @@ The user wants a coherent final product plan, but all tests must be real; do not
 
 2026-10-26 文件整理：旧迭代 UF2 已清理，历史文件名仅作记录。最新三个 UF2、T4-01 和三布局回退版仍保留；日志/预览的新位置见 [整理记录](12-cleanup-2026-10-26.md)。
 
+## 2026-10-27 更新：T5-02 显示状态修复与轨迹球诊断
+
+用户报告双侧普通按键基本正确，切屏后 HID 仍工作但连接/电量显示过期，左右图示相反。
+这些显示问题已做本地修复并回归；新的实机验收待进行。右侧 PMW3610 在电池和 USB
+供电均完全不动，根因未定；另备只加日志的右侧诊断版。
+详见 [操作、根因和测试记录](14-peripheral-state-and-trackball.md) 与
+[候选清单](../releases/T5-02/README.md)。旧版本记录按历史状态保留。
+
 ## Latest candidate — MAC-DV / WIN-DV / GAME, T5-01 (2026-10-24)
 
 User confirms T4-01 device page and two-step NICENANO entry passed. They now have

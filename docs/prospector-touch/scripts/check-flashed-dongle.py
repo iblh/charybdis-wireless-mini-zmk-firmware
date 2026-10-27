@@ -28,6 +28,7 @@ IMAGES = {
     "lazy-layout diagnostic": ROOT / "firmware/build/prospector-touch-layout-lazy-qwerty.uf2",
     "compact four-layout candidate": ROOT / "firmware/build/prospector-touch-four-layouts-compact-qwerty.uf2",
     "three-layout candidate": ROOT / "firmware/build/prospector-touch-three-layouts-qwerty.uf2",
+    "peripheral-sync candidate": ROOT / "firmware/build/prospector-touch-peripheral-sync.uf2",
     "input-modes candidate": ROOT / "firmware/build/prospector-touch-input-modes.uf2",
     "device-page candidate": ROOT / "firmware/build/prospector-touch-device-page-qwerty.uf2",
 }
