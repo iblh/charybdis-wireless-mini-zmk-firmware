@@ -3,7 +3,7 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 source "$HERE/scripts/workspace.sh"
-WORKSPACE="${1:-$(prospector_workspace "$HERE")}" 
+WORKSPACE="${1:-$(prospector_workspace "$HERE")}"
 FW="$WORKSPACE/firmware"
 mkdir -p "$FW/build/reports"
 DOCKER_DEFAULT_PLATFORM="${DOCKER_DEFAULT_PLATFORM:-linux/amd64}" \
