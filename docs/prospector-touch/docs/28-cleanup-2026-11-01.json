@@ -1,0 +1,306 @@
+{
+  "date": "2026-11-01",
+  "scope": "generated local build outputs only; live source/PCB/dependencies untouched",
+  "source_files_unchanged": true,
+  "source_file_count": 381,
+  "removed_generated_trees": {
+    "prospector-dongle-pipeline-q5": 91423380,
+    "prospector-dongle-pipeline-q5-config": 159651,
+    "prospector-dongle-pipeline-q5-zmk": 3164003,
+    "prospector-dongle-pipeline-q64": 90774583,
+    "prospector-dongle-pipeline-q64-cadence": 91121379,
+    "prospector-dongle-pipeline-q64-cadence-config": 159734,
+    "prospector-dongle-pipeline-q64-cadence-zmk": 3164154,
+    "prospector-dongle-pipeline-q64-config": 159652,
+    "prospector-dongle-pipeline-q64-right-test": 91117435,
+    "prospector-dongle-pipeline-q64-right-test-config": 159696,
+    "prospector-dongle-pipeline-q64-right-test-zmk": 3164003,
+    "prospector-dongle-pipeline-q64-zmk": 3164003,
+    "prospector-pipeline-zmk": 3163949,
+    "prospector-right-diagnostic-config": 148285,
+    "prospector-right-pipeline-8ms-angle15": 55605143,
+    "prospector-right-pipeline-8ms-angle15-cadence": 55481273,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3": 59573868,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-config": 149489,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-driver": 49388,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-zmk": 3164489,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att8": 59281177,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att8-config": 149489,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att8-driver": 49388,
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att8-zmk": 3164489,
+    "prospector-right-pipeline-8ms-angle15-cadence-config": 149383,
+    "prospector-right-pipeline-8ms-angle15-cadence-driver": 49197,
+    "prospector-right-pipeline-8ms-angle15-cadence-zmk": 3164281,
+    "prospector-right-pipeline-8ms-angle15-config": 149165,
+    "prospector-right-pipeline-8ms-angle15-cpi1600-cadence": 55584434,
+    "prospector-right-pipeline-8ms-angle15-cpi1600-cadence-config": 149383,
+    "prospector-right-pipeline-8ms-angle15-cpi1600-cadence-driver": 49197,
+    "prospector-right-pipeline-8ms-angle15-cpi1600-cadence-zmk": 3164281,
+    "prospector-right-pipeline-8ms-angle15-driver": 48693,
+    "prospector-right-pipeline-8ms-angle15-zmk": 3164003,
+    "prospector-right-pipeline-8ms-angle40": 55310948,
+    "prospector-right-pipeline-8ms-angle40-config": 149165,
+    "prospector-right-pipeline-8ms-angle40-driver": 48692,
+    "prospector-right-pipeline-8ms-angle40-zmk": 3164003,
+    "prospector-right-profile-12ms-angle15": 54735814,
+    "prospector-right-profile-12ms-angle15-config": 148892,
+    "prospector-right-profile-12ms-angle15-driver": 48506,
+    "prospector-right-profile-8ms-angle15": 54729003,
+    "prospector-right-profile-8ms-angle15-config": 148891,
+    "prospector-right-profile-8ms-angle15-cpi1600": 54851723,
+    "prospector-right-profile-8ms-angle15-cpi1600-config": 149280,
+    "prospector-right-profile-8ms-angle15-cpi1600-driver": 48989,
+    "prospector-right-profile-8ms-angle15-driver": 48506,
+    "prospector-right-trackball-delay1s-config": 148490,
+    "prospector-touch": 72098285,
+    "prospector-touch-config": 158718
+  },
+  "compact_archive": {
+    "path": "firmware/build/archive/2026-11-01-experiments/generated-inputs-and-link-evidence.tar.gz",
+    "bytes": 52602593,
+    "sha256": "d1f5d3a55b2c605a7834178793d510bfa88a3527f74f25882459ce16078fd7f2",
+    "verified_regular_files": 28520
+  },
+  "estimated_logical_bytes_reclaimed": 926769429,
+  "archived_artifacts": [
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q5.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q5.json",
+      "bytes": 22279,
+      "sha256": "e6087ac73d3930769a310fe2909ebc0d45b11e6d195ff82cfbd23accdab2759c"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q5.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q5.uf2",
+      "bytes": 1082368,
+      "sha256": "e5b6072444c9c3663699977ce1a4881102580defc0818f0703c67500dd7ebfae"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64-cadence.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64-cadence.json",
+      "bytes": 22689,
+      "sha256": "201002305664f8df4b80bbc17347408d2860a1af19712920f6219f96e6c5781c"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64-cadence.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64-cadence.uf2",
+      "bytes": 1083392,
+      "sha256": "8a857e1d02c95104f95f7cb539725630095967db64d53758d9accba160715be6"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64-right-test.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64-right-test.json",
+      "bytes": 22736,
+      "sha256": "6e741a3b58435b4ebd782ef96f39fa748c5d8e86c23f62204a00ea6124f6ea2b"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64-right-test.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64-right-test.uf2",
+      "bytes": 1082368,
+      "sha256": "a4843f3962c197774dcd90c8ececf47db5a2d22544d92fc0e530533cbe9ad3e9"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64.json",
+      "bytes": 22281,
+      "sha256": "97c7ac37f66398761bce91c9a64eed399f3854e3529b866d5680a7beec9df6f4"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-pipeline-q64.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-pipeline-q64.uf2",
+      "bytes": 1082368,
+      "sha256": "79e7c27cb6bee801e701183b5037884530cfa2a8a807e52d0bc4c5a691418f46"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-scan-policy.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-scan-policy.json",
+      "bytes": 4400,
+      "sha256": "677514b692e7f1cbe40f04aee56bb3cfe74921020ca5baf514c49276bd8f78ac"
+    },
+    {
+      "from": "firmware/build/prospector-dongle-scan-policy.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-dongle-scan-policy.uf2",
+      "bytes": 1003520,
+      "sha256": "5999c722c7c20be66198adbb4d5869198420cb7ddeef2adb82ee0e4794e808aa"
+    },
+    {
+      "from": "firmware/build/prospector-right-bttrace-cpi800-att3.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-bttrace-cpi800-att3.json",
+      "bytes": 5919,
+      "sha256": "76cb42061e9bc433e5da29e061eb2fb8c9fa47fe3b7baab4d93176650085b781"
+    },
+    {
+      "from": "firmware/build/prospector-right-bttrace-cpi800-att3.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-bttrace-cpi800-att3.uf2",
+      "bytes": 484352,
+      "sha256": "ace793ec2b4b33ad20fea8694a6b51a6718290838487c80c4763a956f296df1a"
+    },
+    {
+      "from": "firmware/build/prospector-right-bttrace-cpi800-att8.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-bttrace-cpi800-att8.json",
+      "bytes": 5919,
+      "sha256": "9bb0380426a6c2f45ef4979f36dec04ddec66b4f9f0f387478f4b3df0246b6bb"
+    },
+    {
+      "from": "firmware/build/prospector-right-bttrace-cpi800-att8.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-bttrace-cpi800-att8.uf2",
+      "bytes": 484352,
+      "sha256": "8db1a95d3de9daa5e95f3d2d65e9559cce4b2fe82b84abeea4b993b4bf88140f"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle15-cpi1600-cadence.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle15-cpi1600-cadence.json",
+      "bytes": 6154,
+      "sha256": "890a08e640bd93b36a4381999581d7e9dd95dc4d2974bf71ce5f7bae7731de9e"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle15-cpi1600-cadence.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle15-cpi1600-cadence.uf2",
+      "bytes": 481280,
+      "sha256": "225520c13271e6a0e1fa527d7021102e437bec119b1a2ddd59806bdeeac9260f"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle15-cpi800-cadence.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle15-cpi800-cadence.uf2",
+      "bytes": 481280,
+      "sha256": "08a690eb6425ea4d9a0671316917b463615284076078eef11681ee220807a2ca"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle15.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle15.json",
+      "bytes": 23116,
+      "sha256": "61a8dd850bf488c925b9bedd70d92b7803592c7b4f87e13098b72f83acb981a1"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle15.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle15.uf2",
+      "bytes": 479744,
+      "sha256": "64edfddb35b7aa0914ffce35588b33516270109021b6836cbcaa7f23f8a56ae4"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle40.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle40.json",
+      "bytes": 23116,
+      "sha256": "74e23f686820b8c45a55d17c7e071da6415b844d710658926a7020e6e3e89b91"
+    },
+    {
+      "from": "firmware/build/prospector-right-pipeline-8ms-angle40.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-pipeline-8ms-angle40.uf2",
+      "bytes": 479744,
+      "sha256": "c59ed0e2e2d77f2b8d9048549bf85802b0f725f44b3a532a7ed53be1025633ff"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-12ms-angle15.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-12ms-angle15.json",
+      "bytes": 3821,
+      "sha256": "68583451b12123ba8ee5b4d1691ea1b8f6b85548dd07cd24fdd0c60bfa2224d0"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-12ms-angle15.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-12ms-angle15.uf2",
+      "bytes": 477184,
+      "sha256": "c1add372216828ec991ed445b9374961f96be52e91e23ca4a61e741d0256b651"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-8ms-angle15-cpi1600.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-8ms-angle15-cpi1600.json",
+      "bytes": 23480,
+      "sha256": "b0b85e79c845ec0b8332c43e5058bf5898350d7543cf1138f6898aa94b59aac8"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-8ms-angle15-cpi1600.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-8ms-angle15-cpi1600.uf2",
+      "bytes": 477184,
+      "sha256": "c09e00c64bf2752856d1eeb676c7a5b0f9930f2d61c5b0e362a8c819161d83ab"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-8ms-angle15.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-8ms-angle15.json",
+      "bytes": 3819,
+      "sha256": "1fecc50905a93c9c071d454bb8d3919e4a0bd8437758c3867f124ee7e88f73c7"
+    },
+    {
+      "from": "firmware/build/prospector-right-profile-8ms-angle15.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-profile-8ms-angle15.uf2",
+      "bytes": 477184,
+      "sha256": "d31457c065fbf57adbf7e435987a49a23bca8bb5882c692bd70d7ba6bc83ab61"
+    },
+    {
+      "from": "firmware/build/prospector-right-trackball-delay1s.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-trackball-delay1s.json",
+      "bytes": 2240,
+      "sha256": "477d03e6cfe1875c054bf44ba28b3701cad8a7e72b5f275db9dc1a6a71a3c643"
+    },
+    {
+      "from": "firmware/build/prospector-right-trackball-delay1s.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-trackball-delay1s.uf2",
+      "bytes": 473600,
+      "sha256": "ae5a9f4c1a5063fb2dbbcb5c951757f3426b044ef023f941942bd413fbe8b636"
+    },
+    {
+      "from": "firmware/build/prospector-right-trackball-diagnostic.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-trackball-diagnostic.json",
+      "bytes": 1397,
+      "sha256": "506ff67b98d5e294e6a3893fadf4cc7e8d366b6afe090f5dfc00ad2869edf8a0"
+    },
+    {
+      "from": "firmware/build/prospector-right-trackball-diagnostic.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-right-trackball-diagnostic.uf2",
+      "bytes": 473600,
+      "sha256": "64644f7d415a34508138686558f8946e8166b79d710686d2f3f133c940307f7f"
+    },
+    {
+      "from": "firmware/build/prospector-touch-input-modes.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-touch-input-modes.json",
+      "bytes": 1944,
+      "sha256": "6cfe95d7659112c8861ec9b14e75b85be1557137bafc35ab9d3f8e16d9930e84"
+    },
+    {
+      "from": "firmware/build/prospector-touch-input-modes.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-touch-input-modes.uf2",
+      "bytes": 1001984,
+      "sha256": "256bd0cc2646e6db0fde1e4a9623175ce23ccc3a33b0de5217ecef862002e1db"
+    },
+    {
+      "from": "firmware/build/prospector-touch-peripheral-sync.json",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-touch-peripheral-sync.json",
+      "bytes": 1413,
+      "sha256": "832a15977063c95f1d5e47f07e59c60a5337a6292ee5470970a37c6d9385ac49"
+    },
+    {
+      "from": "firmware/build/prospector-touch-peripheral-sync.uf2",
+      "to": "firmware/build/archive/2026-11-01-experiments/prospector-touch-peripheral-sync.uf2",
+      "bytes": 1001472,
+      "sha256": "43ce36cfb6475af1d94b85758471771ceb9f2135bce9beaabea83f426bbe0be1"
+    }
+  ],
+  "removed_caches": [
+    "module/tools/__pycache__",
+    "firmware/docs/prospector-touch/scripts/__pycache__",
+    "firmware/local-build/trackball-profile/__pycache__",
+    "firmware/build/.DS_Store"
+  ],
+  "retained_top_level_uf2": {
+    "prospector-dongle-scan-ab.uf2": "138184a32f64c91244749ec5cf417504d9e94becc374c4d186d7eb805e95672b",
+    "prospector-dongle-scan-policy-r2.uf2": "99e0b1f4914b8b6eb4ccd257614216b065567e0cda721815bf7ab445a9df4e6c",
+    "prospector-right-hci-cpi800-att3.uf2": "c471b19320f3ef6f4f5a26327a722d461a234f319e9ae7e6f6285b43f6082246",
+    "prospector-touch-device-page-qwerty.uf2": "c08d5828ea1867596cb55b23d74ccba40b499683a0ae28246d601dc754978b73",
+    "prospector-touch-left-peripheral.uf2": "a08fafd75ea6732cebd80596c7761928c449d4beca0c6de9e91f320c60fc6a9f",
+    "prospector-touch-right-peripheral.uf2": "a6dedb6ceacbfbb7688ee53639dd3978c364ad85e24e66214d1ff117798ef3b9",
+    "prospector-touch-three-layouts-qwerty.uf2": "cc8b90ae7ee4e7fd0bc210d600faad71df08b57dc7887cb63800d1c47e4d7f74"
+  },
+  "retained_build_directories": [
+    "prospector-dongle-pipeline-q64-cadence-radioab",
+    "prospector-dongle-pipeline-q64-cadence-radioab-config",
+    "prospector-dongle-pipeline-q64-cadence-radioab-zmk",
+    "prospector-dongle-scan-policy",
+    "prospector-dongle-scan-policy-config",
+    "prospector-dongle-scan-policy-r2",
+    "prospector-dongle-scan-policy-r2-config",
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab",
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-config",
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-driver",
+    "prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-zmk"
+  ],
+  "reports_and_raw_logs": "all retained, including radio-ab ZIP"
+}

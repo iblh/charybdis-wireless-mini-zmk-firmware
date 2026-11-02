@@ -1,0 +1,4 @@
+/* Right-side resolution comparison only. Preserve GPIO, axes and frame rate. */
+&trackball {
+    cpi = <1600>;
+};

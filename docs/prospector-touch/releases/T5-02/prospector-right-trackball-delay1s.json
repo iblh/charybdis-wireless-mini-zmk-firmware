@@ -1,0 +1,44 @@
+{
+  "artifact": "prospector-right-trackball-delay1s.uf2",
+  "sha256": "ae5a9f4c1a5063fb2dbbcb5c951757f3426b044ef023f941942bd413fbe8b636",
+  "created_on": "2026-10-27",
+  "target": "charybdis_right_dongle / nice_nano//zmk",
+  "dependencies": {
+    "zmk": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+    "pmw3610": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+    "prospector_module": "6299108bef48df59bdb22ef85ea57199b9ced598"
+  },
+  "application_start": "0x26000",
+  "application_end": "0x5fd00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 316160,
+  "flash_linked_bytes": 236712,
+  "ram_static_bytes": 74392,
+  "hardware_acceptance": "FAIL: user cold-power test still reads product ID 0xFF; extra delay ineffective; VDDIO 3.3V and NRESET approx 0V measured, reset network diagnosis pending",
+  "settings_reset": false,
+  "diagnostic_only": true,
+  "role": "right BLE peripheral with USB CDC serial logs; NOT Dongle",
+  "sensor": "PMW3610",
+  "sensor_pins_unchanged": true,
+  "sensor_extra_power_up_delay_ms": 1000,
+  "log_flush_startup_delay_ms": 10000,
+  "log_buffer_bytes": 16384,
+  "usb_cdc_ring_bytes": 8192,
+  "tests": [
+    "Docker/West right diagnostic target PASS",
+    "Compared final .config to original: only startup delay 0 -> 1000ms",
+    "Flattened devicetree byte-identical to original diagnostic",
+    "Compiled BLE peripheral role and USB CDC logging verified; no USB keyboard HID",
+    "UF2 guard PASS; original published diagnostic SHA-256 unchanged"
+  ],
+  "rollback": "prospector-touch-right-peripheral.uf2",
+  "firmware_base_sha": "87f6248fc1e0c43cfc9a388edbf6dcf5cedefc8c",
+  "source_file_sha256": {
+    "config/diagnostics/pmw3610-usb.conf": "86edf41c5bd1f3d41c8936ffa6f6b1d43e90f0f00bcc25172a9af0b8d4712a6f",
+    "config/diagnostics/pmw3610-delay1s.conf": "7079373cd90db853142de3f791133bee9a6e2f78f8996be1c5cb52a7a501f3bc",
+    "docs/prospector-touch/scripts/build-right-diagnostic.sh": "1793389413c0b131c2d875878973ce7a82ab35d1ff822eb0ccadde3653b9a508",
+    "docs/prospector-touch/scripts/build-right-diagnostic-container.sh": "d1993a9a4b5282217a27a6e03baa7052d6987cf9f694c1a1b3bb4f998f23c78a"
+  },
+  "user_report_date": "2026-10-27"
+}

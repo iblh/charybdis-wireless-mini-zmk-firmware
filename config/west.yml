@@ -21,7 +21,7 @@ manifest:
 
     - name: prospector-zmk-module
       remote: iblh
-      revision: 6299108bef48df59bdb22ef85ea57199b9ced598
+      revision: dfd0a7bbc4e36a6fa1615b76f5f7bfd1d308a182
 
   self:
     path: config

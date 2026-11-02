@@ -15,6 +15,7 @@ from pathlib import Path
 HANDOFF = Path(__file__).resolve().parents[1]
 FIRMWARE = next(parent for parent in HANDOFF.parents if (parent / "config/west.yml").is_file())
 ROOT = FIRMWARE.parent
+ARCHIVE = FIRMWARE / "build/archive/2026-11-01-experiments"
 IMAGES = {
     "GitHub Actions #39911723815": HANDOFF
     / "artifacts/ci-39911723815-qwerty/"
@@ -31,6 +32,13 @@ IMAGES = {
     "peripheral-sync candidate": ROOT / "firmware/build/prospector-touch-peripheral-sync.uf2",
     "input-modes candidate": ROOT / "firmware/build/prospector-touch-input-modes.uf2",
     "device-page candidate": ROOT / "firmware/build/prospector-touch-device-page-qwerty.uf2",
+    "T5-04 Dongle pipeline q5": FIRMWARE / "build/prospector-dongle-pipeline-q5.uf2",
+    "T5-04 Dongle pipeline q64": FIRMWARE / "build/prospector-dongle-pipeline-q64.uf2",
+    "T5-04 Dongle RIGHT TEST": FIRMWARE / "build/prospector-dongle-pipeline-q64-right-test.uf2",
+    "T5-05 Dongle cadence diagnostic": FIRMWARE / "build/prospector-dongle-pipeline-q64-cadence.uf2",
+    "T5-08 Dongle scan AB": FIRMWARE / "build/prospector-dongle-scan-ab.uf2",
+    "T5-09 scan policy (known startup regression)": FIRMWARE / "build/prospector-dongle-scan-policy.uf2",
+    "T5-09B scan policy startup fix": FIRMWARE / "build/prospector-dongle-scan-policy-r2.uf2",
 }
 MAGIC_START = (0x0A324655, 0x9E5D5157)
 MAGIC_END = 0x0AB16F30
@@ -68,6 +76,8 @@ def main() -> int:
         current = read_uf2(current_path)
         print(f"Device readback range: 0x{min(current):X}–0x{max(a + len(b) for a, b in current.items()):X}")
         for label, path in IMAGES.items():
+            if not path.is_file():
+                path = ARCHIVE / path.name
             if not path.is_file():
                 continue  # Historical candidates may have been cleaned up.
             image = read_uf2(path)

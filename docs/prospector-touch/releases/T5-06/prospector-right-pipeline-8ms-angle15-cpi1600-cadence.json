@@ -1,0 +1,84 @@
+{
+  "release": "T5-06",
+  "created_on": "2026-11-01",
+  "artifact": "prospector-right-pipeline-8ms-angle15-cpi1600-cadence.uf2",
+  "sha256": "225520c13271e6a0e1fa527d7021102e437bec119b1a2ddd59806bdeeac9260f",
+  "role": "RIGHT BLE peripheral with PMW/TX cadence; NOT Dongle",
+  "hardware_acceptance": "PENDING; no automatic flash",
+  "firmware_base_sha": "87f6248fc1e0c43cfc9a388edbf6dcf5cedefc8c",
+  "module_base_sha": "6299108bef48df59bdb22ef85ea57199b9ced598",
+  "working_tree_changes_included": true,
+  "application_start": "0x26000",
+  "application_end": "0x60C00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 312320,
+  "flash_linked_bytes": 240420,
+  "ram_static_bytes": 77184,
+  "sensor_cpi": 1600,
+  "report_interval_ms": 8,
+  "rotation_degrees_clockwise": 15,
+  "settings_reset": false,
+  "dts_identical_to": "prospector-right-profile-8ms-angle15-cpi1600",
+  "dts_sha256": "bbf0a60a67a5ba590771360fa0dc8e5a5ae6c36beff22c9e7c5690bf65541828",
+  "config_sha256": "5386ef504d17709d929c52d2072eea53938c2ce03288ca9135f07274130d898a",
+  "effective_config_changes": [
+    "CONFIG_PROSPECTOR_PIPELINE_PROFILE=y",
+    "CONFIG_PROSPECTOR_PIPELINE_CADENCE=y"
+  ],
+  "pipeline_staging_manifest": {
+    "zmk_base_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "patched_sha256": {
+      "src/split/bluetooth/central.c": "4168321f7ab6f771131b854f6ca4ddf302a572ba07e3b816d162ed50fb6e52c6",
+      "src/split/bluetooth/service.c": "db63a43b9907d128ce6be2c5f82e2d64701a90fd70a610fd21d893834330359f",
+      "src/usb_hid.c": "1164c64e1e0aaacce46d94ec83e2b2e830af8db27a06988d96b5fc8eae4a5b4f",
+      "src/pointing/input_listener.c": "bb8e0b6150aebcc73efb31ae4e78c4276a1e2be6fadf2643dcc1e49b007de151"
+    },
+    "patch_script_sha256": "d6e4789db87ece93fb6b170f9e26bdd6d26b46aee7aed07b24bf04c7d7980228"
+  },
+  "driver_staging_manifest": {
+    "driver_base_sha": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+    "angle_deg_clockwise": 15,
+    "source_sha256": {
+      "prepare_right_only_keymap.py": "b8eb87f0bcb117de86a3375141948be45947c716d23fe43285c2f7b74eab5ff0",
+      "pmw3610_profile.h": "46ef68621d6a4b0fa9d1ccee7a559515951d79ad271e755556b556e4f045a3db",
+      "motion_math.h": "3184ed4a788c31c5817674975e00390dfbe758679d5614924a361f6fb8d671a0",
+      "prepare_driver.py": "2faaeeaa3f427f5317265b2938c1e336bafad768a600e4765fb80d77d19377d3",
+      "test_profile.py": "28c27688a97bdfaa85a92f090f80ccc68f5ceddbfbaf31d272c589e2004cf88d",
+      "test_cadence.py": "065c2d3f008622ccf18eb1da3c32811aa140555a8d06c4c4a86ca711b51086ed",
+      "pmw3610_profile.c": "ed3f63bcb8b35de8f167622b9645253069032388075c48fbb3de700fd89f0abe",
+      "test_capture.py": "093046c258eefe41098ee0b273f2bfbfe93b101dafaa758060a8367f2ad15e1b",
+      "test_right_only_keymap.py": "bfe4b690117b1b0b608bfa9bcfd0842f7b512f1c48cbd48655f1e41c12953d22",
+      "prepare_pipeline.py": "d6e4789db87ece93fb6b170f9e26bdd6d26b46aee7aed07b24bf04c7d7980228",
+      "Kconfig.profile": "7798637c56cec29981a7be09c7cf48f03c31c0f5dd48f6949b3336d3f015a566",
+      "test_pipeline.py": "d721a484e7d7e071c3ae1fcca973f0c64337c3e05277974f1ec427d317278a94"
+    }
+  },
+  "working_sources_sha256": {
+    "firmware/config/diagnostics/pipeline.conf": "6026ff05f8e6380731f8704ad18fcc9cbd35164d18219e4310c9339c0bb2fee4",
+    "firmware/config/diagnostics/pmw3610-cpi1600.overlay": "1fbdffca7440cb374345d8e7719eb5a62824824afb87dae35b6be4aea03beb1e",
+    "firmware/config/diagnostics/pmw3610-profile.conf": "aca4cc38e375d83c6990747a01054832469353abd901ff9ff8ca745c185f71f0",
+    "firmware/docs/prospector-touch/scripts/build-pipeline-container.sh": "f2f8eb55e5f2ee7e8e9b00de227e46f0f2f9b45132717df1cf5d8f5630e8ca7a",
+    "firmware/docs/prospector-touch/scripts/build-pipeline.sh": "91b5dc4fcf8dcaba6b7cff6a50d3ceaeffc9645a92afea0db3e9a5b394857322",
+    "firmware/local-build/trackball-profile/Kconfig.profile": "7798637c56cec29981a7be09c7cf48f03c31c0f5dd48f6949b3336d3f015a566",
+    "firmware/local-build/trackball-profile/motion_math.h": "3184ed4a788c31c5817674975e00390dfbe758679d5614924a361f6fb8d671a0",
+    "firmware/local-build/trackball-profile/pmw3610_profile.c": "ed3f63bcb8b35de8f167622b9645253069032388075c48fbb3de700fd89f0abe",
+    "firmware/local-build/trackball-profile/pmw3610_profile.h": "46ef68621d6a4b0fa9d1ccee7a559515951d79ad271e755556b556e4f045a3db",
+    "firmware/local-build/trackball-profile/prepare_driver.py": "2faaeeaa3f427f5317265b2938c1e336bafad768a600e4765fb80d77d19377d3",
+    "firmware/local-build/trackball-profile/prepare_pipeline.py": "d6e4789db87ece93fb6b170f9e26bdd6d26b46aee7aed07b24bf04c7d7980228",
+    "firmware/local-build/trackball-profile/prepare_right_only_keymap.py": "b8eb87f0bcb117de86a3375141948be45947c716d23fe43285c2f7b74eab5ff0",
+    "firmware/local-build/trackball-profile/test_cadence.py": "2d0f1d277f2ef1943346bd9d2a4c96b17535018a0cf3ea5c38ef3884a4302288",
+    "firmware/local-build/trackball-profile/test_capture.py": "093046c258eefe41098ee0b273f2bfbfe93b101dafaa758060a8367f2ad15e1b",
+    "firmware/local-build/trackball-profile/test_pipeline.py": "92de75a3a505d775b0493d54bc3f5e2e24f4b8ee59c981d69704f8625ead88d4",
+    "firmware/local-build/trackball-profile/test_profile.py": "2fb8b3dd0ea8281d7a9cb64cd2f06265cbcd84e2c51923a3e707de390a64be23",
+    "firmware/local-build/trackball-profile/test_right_only_keymap.py": "bfe4b690117b1b0b608bfa9bcfd0842f7b512f1c48cbd48655f1e41c12953d22",
+    "module/CMakeLists.txt": "51cccc9f0547916a342b8ff2da0a83e4746af43c8de3c24ae5800c828eed268c",
+    "module/Kconfig": "0df1ec7df8387165038aea490e52e6b0ea75af8402588c1a6f641ba6ce5d829b",
+    "module/include/prospector/pipeline_profile.h": "dd9028bbe8acdc0c44852441d16ea58e3bb895b54f78dd9f74fa44d31a947894",
+    "module/src/pipeline_profile.c": "f910e5f8924c61259129f7f9fa070d0a326b444a1d5765f135508111d0c1cec1"
+  },
+  "input_logs_sha256": {
+    "dongle-cadence-20261101-010739.log": "581b8f2e1f6f9cc7f1cc00f5b19272793ecf6440c81958c80fea3a66f5632896",
+    "right-1600-cadence-20261101-010743.log": "19b6d83187f003a132fd47940e93700f7980c0417f1810907ad32f16f8d80e81"
+  },
+  "keep_dongle_sha256": "8a857e1d02c95104f95f7cb539725630095967db64d53758d9accba160715be6"
+}

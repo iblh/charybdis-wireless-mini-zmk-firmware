@@ -6,10 +6,11 @@
 - [项目入口、构建与历史验证记录](docs/prospector-touch/README.md)
 - [MAC-DV / WIN-DV / GAME 键位、刷写及首次配对](docs/prospector-touch/docs/11-input-modes-guide.md)
 - [当前验收状态](docs/prospector-touch/docs/06-roadmap-and-acceptance.md)
-- [T5-01 候选的校验值及预览](docs/prospector-touch/releases/T5-01/README.md)
+- [T5-09B 当前基线、优化结果与后续](docs/prospector-touch/docs/27-current-baseline-and-next-steps.md)
 
 Touch UI 支持 Classic / Field / Operator，左右滑切换外观，下滑亮度、上滑设备页。
-T4-01 的设备页和确认刷机已由用户验证；T5-01 三输入模式仍需真实键盘验收。
+触屏、真实调光和设备页确认刷机已验证；T5-09B右侧自动连接、断电重连通过，用户确认轨迹球明显改善。
+双侧同时在线、完整三模式快捷键覆盖与长时间稳定性仍待验收。
 仓库的 `config/west.yml` 固定了本地测试使用的依赖版本。
 
 此仓库负责硬件、键位和构建；UI/行为在独立的

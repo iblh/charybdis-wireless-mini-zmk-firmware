@@ -1,0 +1,67 @@
+{
+  "release": "T5-08",
+  "created_on": "2026-11-01",
+  "role": "dongle",
+  "artifact": "prospector-dongle-scan-ab.uf2",
+  "sha256": "138184a32f64c91244749ec5cf417504d9e94becc374c4d186d7eb805e95672b",
+  "size_bytes": 1086464,
+  "hardware_acceptance": "PENDING; locally built/tested only; no automatic flash or stutter improvement claimed",
+  "firmware_base_sha": "87f6248fc1e0c43cfc9a388edbf6dcf5cedefc8c",
+  "module_base_sha": "6299108bef48df59bdb22ef85ea57199b9ced598",
+  "zmk_base_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "zephyr_base_sha": "10ba6d0cb38bc3d258775d27982f707599320085",
+  "driver_base_sha": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+  "working_tree_changes_included": true,
+  "build_directory": "build/prospector-dongle-pipeline-q64-cadence-radioab",
+  "application_start": "0x26000",
+  "application_end": "0xaaa00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 9728,
+  "flash_linked_bytes": 543164,
+  "ram_static_bytes": 222578,
+  "config_sha256": "5aef74585fa839171b3c4adf97c72d8cd03d5fc1ded864280caa5a4914945e7a",
+  "dts_sha256": "a5093d903f025fa4186612d2492dec7f131ac4dc7184b678cfc227c135f0d195",
+  "settings_reset": false,
+  "connection_interval_us": 7500,
+  "connection_latency": 30,
+  "protocol_changed": false,
+  "hci_trace": false,
+  "scan_ab": true,
+  "scan_sequence": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "phase_seconds": 20,
+  "firmware_test_timeout_seconds": 80,
+  "capture_seconds": 95,
+  "source_sha256": {
+    "module/CMakeLists.txt": "ce49305909ea9f3f4d3c5f65b90de57ea02fb307cd39b517cbe535924e102dde",
+    "module/Kconfig": "601ffb2fca6be735c390d128d89a6021080a3a4efbc26930259077b356e9fdf2",
+    "module/src/pipeline_profile.c": "9b6600d5fe4dbd771a53bf815ccd45ece22037ddcee00d47995abd5a4ef8577d",
+    "module/include/prospector/pipeline_profile.h": "624b3a1e2752ffcc21583dfe30c7e428b2fab34f4edeca37cf562e9aba94a599",
+    "firmware/local-build/trackball-profile/prepare_pipeline.py": "8a581bad8ead01a7f509127d5b4f1e9d3f0cbf0868d3abd24458f964e97fd374",
+    "firmware/local-build/trackball-profile/verify_bt_trace_link.py": "0b0253b836f3b7a77cb4bfe71548537f22d095641ea03b9d4d0a50e5433edf74",
+    "firmware/docs/prospector-touch/scripts/build-pipeline.sh": "52723b388faf4078db503c50ae8fdc9478b3d3f24a527ac5bcc22d9967f8db06",
+    "firmware/docs/prospector-touch/scripts/build-pipeline-container.sh": "d96c1c715788fd37d1da5db02275aa6eacd9264e3262a114d5d3234f96ad70b9",
+    "module/src/scan_ab.c": "8dec24ebf4d73c62e98f2948300d794110aeaf9a541275c12ec48cb506dc6cba"
+  },
+  "capture_and_tests_sha256": {
+    "firmware/docs/prospector-touch/scripts/capture-radio-ab.py": "2eb2f234968adcea2946bcfecb9c4d06af23c582b2d38a6827c3790d5eca4413",
+    "firmware/docs/prospector-touch/scripts/capture-right-profile.py": "691ca397894809dd4e50fcd19c7286ea77608a010f3bbd638a25c378ea737cce",
+    "firmware/local-build/trackball-profile/test_radio_ab.py": "5af310ed86e6490a15a5785d45a1bf712fdce972fb463fd90cf72a6dae838b06",
+    "firmware/local-build/trackball-profile/test_radio_capture.py": "8a8a6bae75bda06acbcbf09c2d52d4b2f2eff595cf3ebd079878b07c3dadcf96"
+  },
+  "pipeline_staging_manifest": {
+    "zmk_base_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "patched_sha256": {
+      "src/split/bluetooth/central.c": "106e1e906a28b43ba18210178d4b84d262dcbb034a43419516c4021daed06f2a",
+      "src/split/bluetooth/service.c": "2c973778014ac8a3dc4076f7b7ae5a89427457c5a8e3bac16f54c7d5cd95ad58",
+      "src/usb_hid.c": "1164c64e1e0aaacce46d94ec83e2b2e830af8db27a06988d96b5fc8eae4a5b4f",
+      "src/pointing/input_listener.c": "bb8e0b6150aebcc73efb31ae4e78c4276a1e2be6fadf2643dcc1e49b007de151"
+    },
+    "patch_script_sha256": "8a581bad8ead01a7f509127d5b4f1e9d3f0cbf0868d3abd24458f964e97fd374"
+  },
+  "device_source_id": "411BAB"
+}

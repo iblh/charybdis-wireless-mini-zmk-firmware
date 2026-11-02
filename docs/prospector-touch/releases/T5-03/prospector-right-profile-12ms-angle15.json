@@ -1,0 +1,66 @@
+{
+  "artifact": "prospector-right-profile-12ms-angle15.uf2",
+  "sha256": "c1add372216828ec991ed445b9374961f96be52e91e23ca4a61e741d0256b651",
+  "created_on": "2026-10-31",
+  "release": "T5-03",
+  "role": "right BLE peripheral with USB CDC profile; not Dongle",
+  "dependencies": {
+    "zmk": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+    "pmw3610": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+    "prospector_module": "6299108bef48df59bdb22ef85ea57199b9ced598"
+  },
+  "firmware_base_sha": "87f6248fc1e0c43cfc9a388edbf6dcf5cedefc8c",
+  "application_start": "0x26000",
+  "application_end": "0x60400",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 314368,
+  "flash_linked_bytes": 238392,
+  "ram_static_bytes": 74544,
+  "sensor_cpi": 800,
+  "report_interval_ms": 12,
+  "rotation_degrees_clockwise": 15,
+  "sensor_extra_power_up_delay_ms": 1000,
+  "log_summary_interval_ms": 2000,
+  "log_flush_startup_delay_ms": 10000,
+  "sensor_pins_unchanged": true,
+  "settings_reset": false,
+  "hardware_acceptance": "PENDING: direction and continuous-motion behavior require user comparison; temporary diagnostic, not production release",
+  "driver_staging_manifest": {
+    "driver_base_sha": "f6e234367b22508b5c0a6bcc82437c64f320089b",
+    "angle_deg_clockwise": 15,
+    "source_sha256": {
+      "pmw3610_profile.h": "46ef68621d6a4b0fa9d1ccee7a559515951d79ad271e755556b556e4f045a3db",
+      "motion_math.h": "3184ed4a788c31c5817674975e00390dfbe758679d5614924a361f6fb8d671a0",
+      "prepare_driver.py": "2faaeeaa3f427f5317265b2938c1e336bafad768a600e4765fb80d77d19377d3",
+      "test_profile.py": "0efd7ecc4465b4b94fb238c6474fe50ef6a7ccde07955ce29a7add65f4ba9bc6",
+      "pmw3610_profile.c": "542994a16b1613e7d15f7d536f550b2cc3d5dedd67e593d07d2a7ef0a6f01cc9",
+      "test_capture.py": "057395e97293931f510b49d0062ec8ab427516bf2591560363a66992301aa8ed",
+      "Kconfig.profile": "7798637c56cec29981a7be09c7cf48f03c31c0f5dd48f6949b3336d3f015a566"
+    }
+  },
+  "runtime_source_sha256": {
+    "pixart.h": "be9ed7e7e7a861ba56eadade90bb0d0f176e943ad61ca684603b364545e8d0fb",
+    "pmw3610.h": "29f20d9bbe52000911bf28e58bb8e3ff2c35cc39382649ed288d8b06ca859dbb",
+    "pmw3610_profile.h": "46ef68621d6a4b0fa9d1ccee7a559515951d79ad271e755556b556e4f045a3db",
+    "motion_math.h": "3184ed4a788c31c5817674975e00390dfbe758679d5614924a361f6fb8d671a0",
+    "pmw3610.c": "59d80744ede7ad7d007c424e8f5d7a519de5853e1d0b25447dad9e07eedf323e",
+    "pmw3610_profile.c": "542994a16b1613e7d15f7d536f550b2cc3d5dedd67e593d07d2a7ef0a6f01cc9",
+    "profile_coeffs.h": "00fa69a979524a77fb678495a515a5d13ef5519728ac548b27da476fd9a47b01"
+  },
+  "compiled_config_sha256": "91c5e639c2f2544f30b087f6f4604e8c9bc49e26d34362d97cdb0b139e67e70a",
+  "compiled_devicetree_sha256": "036a761675b686f27acc0f951823c777b9fb63b4cacb818fb4845c34c6355c3b",
+  "tests": [
+    "Actual profile C and actual staged driver report function native tests PASS for 12ms/8ms",
+    "15-degree calibration, slow-delta fractional conservation, frame consumption, reversal and saturation PASS",
+    "Regular 4ms and delayed 24ms sample traces preserve pending movement through the report limiter",
+    "Input API errors passed through and counted; quality/IRQ/work summaries and periodic status PASS",
+    "Serial collector pseudo-terminal, split UTF-8 and existing-log preservation tests PASS",
+    "Final Docker/West right target builds PASS; deferred logging enabled",
+    "12ms/8ms effective Kconfig differs only in interval; path comments differ; flattened DTS and runtime driver sources identical",
+    "Only staged driver linked; original pinned checkout and normal right UF2 preserved",
+    "UF2 guard PASS"
+  ],
+  "rollback": "prospector-touch-right-peripheral.uf2",
+  "preserve_pending_motion_on_sample_gap": true
+}

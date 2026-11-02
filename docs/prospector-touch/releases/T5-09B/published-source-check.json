@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-01",
+  "purpose": "Final source pin build; does not replace accepted local r2",
+  "module_commit": "dfd0a7bbc4e36a6fa1615b76f5f7bfd1d308a182",
+  "zmk_commit": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "build_directory": "firmware/build/prospector-dongle-published-check",
+  "build_pass": true,
+  "uf2_guard_pass": true,
+  "actual_init_entries": {
+    "ble": "0x852dc",
+    "central": "0x852ec",
+    "observer": "0x852f4"
+  },
+  "config_identical_to_accepted_r2": true,
+  "normalized_dts_identical_to_accepted_r2": true,
+  "generated_central_identical_to_accepted_r2": true,
+  "application_payload_identical_except_source_id_and_build_time": true,
+  "build_info": {
+    "PROSPECTOR_SOURCE_ID": "499E9B",
+    "PROSPECTOR_BUILD_TIME": "11-01 23:19"
+  },
+  "uf2_sha256": "c197fd57469b8fc4940b285fac0a2ebba7b73085bf08fbdd5845f49a387fa675",
+  "accepted_r2_uf2_unchanged": true,
+  "right_uf2_unchanged": true,
+  "hardware_flash": "not performed; accepted original r2 remains current",
+  "remote_ci": "not run; workflow YAML/embedded scripts checked locally"
+}

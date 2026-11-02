@@ -6,6 +6,10 @@
   当前绑定的左右显示校正；模式/键位保持原定义。原始槽号仍显示为 K1/K2。
 - `prospector-right-trackball-diagnostic.uf2`：仅右侧 BLE 外设。增加 USB 串口和 PMW3610
   日志，传感器引脚和初始化配置保持不变，供进一步定位完全无指针问题。
+- `prospector-right-trackball-delay1s.uf2`：后续单变量实验，仅增加 1000ms 上电等待。
+  原诊断版已由用户确认产品 ID 读到 0xFF、初始化失败；PCB 文件与固件 GPIO 匹配，
+  此候选本地编译/UF2 guard 通过；用户重新上电实测仍为 0xFF，延时无效。
+  后续测得 NRESET≈0V，正在排查 PCB 复位上拉，不能标记为已修复。
 
 UF2 保留在本地 `firmware/build/`；本目录保存同名 JSON 校验清单。
 操作与本地测试证据见 [诊断说明](../../docs/14-peripheral-state-and-trackball.md)。

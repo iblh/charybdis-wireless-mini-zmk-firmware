@@ -9,14 +9,13 @@ else
   echo 'Using existing West checkouts; no remote revisions will be fetched.'
 fi
 west zephyr-export
-if [ ! -d prospector-zmk-module ]; then
-   echo 'prospector-zmk-module was not checked out by west' >&2; exit 1
-fi
-# Reuse checked-out user's actual local edits, without copying its .git metadata.
-tar --exclude='.git' -C /workspaces/prospector-local-module -cf - . \
-   | tar -C prospector-zmk-module -m -xf -
+# Resolve the manifest module using the user's read-only working tree, without
+# overwriting the separate West checkout or discarding any local module edits.
+MODULE=/workspaces/prospector-local-module
+BUILD_NAME="${PROSPECTOR_BUILD_NAME:-prospector-touch}"
+if [[ ! "$BUILD_NAME" =~ ^[a-zA-Z0-9_-]+$ ]]; then echo 'Invalid build name' >&2; exit 1; fi
 ROOT="$PWD"
-STAGED_CONFIG="$ROOT/build/prospector-touch-config"
+STAGED_CONFIG="$ROOT/build/$BUILD_NAME-config"
 MARKER="$STAGED_CONFIG/.generated-by-prospector-touch-build"
 if [ -e "$STAGED_CONFIG" ] && [ ! -f "$MARKER" ]; then
   echo "Refusing to replace non-generated config directory: $STAGED_CONFIG" >&2
@@ -38,25 +37,30 @@ if [ "$KEYMAP" = touch_modes ]; then MODE_CONF=";$STAGED_CONFIG/dongle_prospecto
 CONF="$STAGED_CONFIG/dongle_prospector"
 LAYOUT="$STAGED_CONFIG/dongle_prospector_layouts"
 PRISTINE_MODE=auto
-CACHE="$ROOT/build/prospector-touch/CMakeCache.txt"
+CACHE="$ROOT/build/$BUILD_NAME/CMakeCache.txt"
 if [ -f "$CACHE" ] && ! grep -Fxq "CACHED_ZMK_CONFIG:STRING=$STAGED_CONFIG" "$CACHE"; then
   PRISTINE_MODE=always
 fi
 echo "West pristine mode: $PRISTINE_MODE"
 west build -p "$PRISTINE_MODE" \
  -s zmk/app \
- -d build/prospector-touch \
+ -d "build/$BUILD_NAME" \
  -b 'nice_nano//zmk' \
  -- \
  "-DZMK_CONFIG=$STAGED_CONFIG" \
- "-DZMK_EXTRA_MODULES=$ROOT/boards;$ROOT/zmk-pmw3610-driver;$ROOT/prospector-zmk-module" \
+ "-DZMK_EXTRA_MODULES=$ROOT/boards;$ROOT/zmk-pmw3610-driver;$MODULE" \
  '-DSHIELD=charybdis_dongle prospector_adapter' \
  '-DSNIPPET=studio-rpc-usb-uart' \
  "-DEXTRA_CONF_FILE=$CONF/dongle_prospector_common.conf;$LAYOUT/dongle_prospector_layout_operator.conf;$CONF/dongle_prospector_no_sensor.conf;$CONF/dongle_prospector_touch.conf$MODE_CONF" \
  "-DEXTRA_DTC_OVERLAY_FILE=$CONF/dongle_prospector_no_sensor.overlay;$CONF/dongle_prospector_touch.overlay"
-UF2="$ROOT/build/prospector-touch/zephyr/zmk.uf2"
+UF2="$ROOT/build/$BUILD_NAME/zephyr/zmk.uf2"
 if [ -f "$UF2" ]; then
  python3 /workspaces/verify-dongle-uf2.py "$UF2"
+ if grep -qx 'CONFIG_PROSPECTOR_SPLIT_SCAN_POLICY=y' "$ROOT/build/$BUILD_NAME/zephyr/.config"; then
+   python3 "$MODULE/tools/verify_scan_startup.py" \
+     --elf "$ROOT/build/$BUILD_NAME/zephyr/zmk.elf" \
+     --map "$ROOT/build/$BUILD_NAME/zephyr/zmk.map"
+ fi
  echo "SUCCESS UF2: $UF2"
  ls -lh "$UF2"
 else

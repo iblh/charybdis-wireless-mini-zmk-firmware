@@ -1,0 +1,89 @@
+{
+  "release": "T5-09",
+  "created_on": "2026-11-01",
+  "artifact": "prospector-dongle-scan-policy.uf2",
+  "role": "Dongle ONLY",
+  "hardware_acceptance": "FAILED: user reports UI boots but right keyboard cannot connect; reverting Dongle only to T5-08 restores connection",
+  "sha256": "5999c722c7c20be66198adbb4d5869198420cb7ddeef2adb82ee0e4794e808aa",
+  "firmware_base_sha": "87f6248fc1e0c43cfc9a388edbf6dcf5cedefc8c",
+  "module_base_sha": "6299108bef48df59bdb22ef85ea57199b9ced598",
+  "zmk_base_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "zephyr_base_sha": "10ba6d0cb38bc3d258775d27982f707599320085",
+  "working_tree_changes_included": true,
+  "device_release_tag": "T5-09-SCAN",
+  "device_source_id": "20BD12",
+  "flash_linked_bytes": 501672,
+  "ram_static_bytes": 213442,
+  "application_start": "0x26000",
+  "application_end": "0xA0800",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 51200,
+  "settings_reset": false,
+  "peripheral_slots": 2,
+  "central_queue_size": 64,
+  "connection_interval_us": 7500,
+  "connection_latency": 30,
+  "scan_modes": {
+    "zero_connected": {
+      "interval_ms": 60,
+      "window_ms": 30
+    },
+    "partial_connected": {
+      "interval_ms": 200,
+      "window_ms": 5
+    },
+    "all_connected": "off",
+    "connection_attempt": "off while pending",
+    "disabled": "off"
+  },
+  "retry_ms": 1000,
+  "scan_ab_included": false,
+  "pipeline_profile_included": false,
+  "normal_build": true,
+  "build_directory": "build/prospector-dongle-scan-policy",
+  "config_sha256": "3be38c7d348665b3afa2153c52877dfafc9124a48e599f188617abaf9f7830c6",
+  "dts_sha256": "56f9e71eb618f97bd0bb5cf04ca46307da1eb791882b00e09d196a0695ac1474",
+  "generated_central": {
+    "zmk_base_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+    "original_sha256": "46455685cbaa16e4508a70fdd27ca5301f0288165efd6b343598eb963c9b0f3b",
+    "generated_sha256": "8f79856c3c4cefd53975659d17b31ec40710b7e0899c41ce48d3e4538f2dd71a",
+    "generator_sha256": "796b6b1058dede54f530ada38fa995ccbcc105c3bebfd03db141988718cae6de"
+  },
+  "source_sha256": {
+    "module/Kconfig": "61096b2cb70d811c16ab6a35dca8003c6db931ea82ecd79ed8edea1b6c542649",
+    "module/CMakeLists.txt": "3f03e0b9989ee4ded9fea711c26d88d6ff9588ec49498e28089b2806339ad3d4",
+    "module/include/prospector/split_scan_policy.h": "d2d6f226871a1a85cd38ec471a81302c2b3148c9ed31f544b524a6f585a2fde6",
+    "module/include/prospector/split_scan_policy_impl.h": "09d9b167bc84f886c57c2c9b0f8de571af84696ab666fd47b55dd05cbc6faa19",
+    "module/tools/generate_scan_policy.py": "796b6b1058dede54f530ada38fa995ccbcc105c3bebfd03db141988718cae6de",
+    "module/tools/generate_build_info.py": "eccb0742569679eea2af4993b5b97ca1b3784cfb2ea74d8311401285bd4492f9",
+    "module/tools/test_scan_policy.py": "d2b1f56ea4531b901fb2423d9d527e6db9124ccf4c6484c1a2ffd3ed5328b033",
+    "firmware/config/dongle_prospector/dongle_prospector_touch.conf": "3752d187c99ed03e87ca00b1d3bff793378bd337f80f3a527d8b94c830ccf93e",
+    "firmware/config/dongle_prospector/dongle_prospector_input_modes.conf": "597a48d9bd41385636c78e52e23229b0b8b82251dc284313c72deaea14913104",
+    "firmware/config/diagnostics/pipeline.conf": "7a2222914cac3e6f386be68b04cebb3dce61fd4272e4d0fba370604646b15a29",
+    "firmware/docs/prospector-touch/scripts/build-touch-only.sh": "4eb4eadce1a6e3f637e9cc4cd6b6316400a27024e63640bbef1a217d0e0c0bab",
+    "firmware/docs/prospector-touch/scripts/build-touch-only-container.sh": "9a66d989db6bbc2f95e3c7595fc30b723d18849737868a51ea58aae014046837"
+  },
+  "right_unchanged": {
+    "artifact": "prospector-right-hci-cpi800-att3.uf2",
+    "sha256": "c471b19320f3ef6f4f5a26327a722d461a234f319e9ae7e6f6285b43f6082246",
+    "cpi": 800,
+    "att_tx": 3,
+    "report_interval_ms": 8,
+    "rotation_degrees_clockwise": 15
+  },
+  "rollback": {
+    "artifact": "prospector-dongle-scan-ab.uf2",
+    "sha256": "138184a32f64c91244749ec5cf417504d9e94becc374c4d186d7eb805e95672b"
+  },
+  "verification": [
+    "native actual policy and generated connect hook",
+    "original West central preserved",
+    "generated central is only compiled BLE central TU",
+    "q64/2 slots/unchanged connection preferences",
+    "same keymap/display/touch/pinctrl/split-input nodes; normal build snippet differs from logging diagnostic",
+    "UF2 block/vector/old-bootloader-limit checks"
+  ],
+  "low_priority_retry_stack_bytes": 1536,
+  "regression": "Generated central TU links before BLE at equal SYS_INIT priority 50; BT settings initialization discards central dynamic Settings handler, so finish_init never enables transport",
+  "superseded_by": "T5-09B startup-order fix candidate; hardware acceptance pending"
+}
