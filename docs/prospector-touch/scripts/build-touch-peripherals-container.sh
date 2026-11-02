@@ -5,6 +5,11 @@ set -euo pipefail
 cd /workspaces/zmk
 west zephyr-export
 ROOT="$PWD"
+case "${PROSPECTOR_PERIPHERAL_SIDE:-both}" in
+  both) SIDES='left right' ;;
+  left|right) SIDES="$PROSPECTOR_PERIPHERAL_SIDE" ;;
+  *) echo 'Side must be left, right or both' >&2; exit 2 ;;
+esac
 STAGE="$ROOT/build/prospector-peripheral-config"
 MARKER="$STAGE/.generated-by-prospector-peripheral-build"
 if [ -e "$STAGE" ] && [ ! -f "$MARKER" ]; then
@@ -17,12 +22,12 @@ touch "$MARKER"
 for f in "$ROOT"/config/charybdis/*.conf; do
   if [ -f "$f" ]; then cp "$f" "$STAGE/$(basename "$f")"; fi
 done
-for SIDE in left right; do
+for SIDE in $SIDES; do
   SHIELD="charybdis_${SIDE}_dongle"
   cp "$ROOT/config/keymaps/qwerty.keymap" "$STAGE/$SHIELD.keymap"
   west build -p auto -s zmk/app -d "build/prospector-${SIDE}-peripheral" -b 'nice_nano//zmk' -- \
     "-DZMK_CONFIG=$STAGE" \
-    "-DZMK_EXTRA_MODULES=$ROOT/boards;$ROOT/zmk-pmw3610-driver;$ROOT/prospector-zmk-module" \
+    "-DZMK_EXTRA_MODULES=$ROOT/boards;$ROOT/zmk-pmw3610-driver;/workspaces/prospector-local-module" \
     "-DSHIELD=$SHIELD"
   python3 /workspaces/verify-dongle-uf2.py "$ROOT/build/prospector-${SIDE}-peripheral/zephyr/zmk.uf2"
 done
