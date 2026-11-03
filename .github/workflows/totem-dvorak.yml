@@ -23,6 +23,7 @@ jobs:
           git clone --depth 1 https://github.com/GEIGEIGEIST/zmk-config-totem.git totem-source
           cp config/totem.keymap totem-source/config/totem.keymap
           west init -l totem-source/config
+          cd totem-source
           west update
           west zephyr-export
 
@@ -30,21 +31,23 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          cd totem-source
           west build -p always -s zmk/app -b xiao_ble//zmk -d build-left -- \
             -DSHIELD=totem_left \
             -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
           test -s build-left/zephyr/zmk.uf2
-          cp build-left/zephyr/zmk.uf2 totem_dvorak_left_xiao_ble.uf2
+          cp build-left/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/totem_dvorak_left_xiao_ble.uf2"
 
       - name: Build TOTEM right (peripheral)
         shell: bash
         run: |
           set -euo pipefail
+          cd totem-source
           west build -p always -s zmk/app -b xiao_ble//zmk -d build-right -- \
             -DSHIELD=totem_right \
             -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
           test -s build-right/zephyr/zmk.uf2
-          cp build-right/zephyr/zmk.uf2 totem_dvorak_right_xiao_ble.uf2
+          cp build-right/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/totem_dvorak_right_xiao_ble.uf2"
 
       - name: Publish both flashable UF2s
         uses: actions/upload-artifact@v4
