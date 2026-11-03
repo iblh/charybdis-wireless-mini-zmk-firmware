@@ -1,0 +1,56 @@
+name: TOTEM Dvorak UF2 (isolated)
+on:
+  push:
+    branches:
+      - totem-dvorak-20261102
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-totem:
+    runs-on: ubuntu-latest
+    container: zmkfirmware/zmk-build-arm:stable
+    steps:
+      - name: Checkout Dvorak keymap branch
+        uses: actions/checkout@v4
+
+      - name: Obtain official TOTEM shield and ZMK toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/GEIGEIGEIST/zmk-config-totem.git totem-source
+          cp config/totem.keymap totem-source/config/totem.keymap
+          west init -l totem-source/config
+          west update
+          west zephyr-export
+
+      - name: Build TOTEM left (central)
+        shell: bash
+        run: |
+          set -euo pipefail
+          west build -p always -s zmk/app -b xiao_ble//zmk -d build-left -- \
+            -DSHIELD=totem_left \
+            -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
+          test -s build-left/zephyr/zmk.uf2
+          cp build-left/zephyr/zmk.uf2 totem_dvorak_left_xiao_ble.uf2
+
+      - name: Build TOTEM right (peripheral)
+        shell: bash
+        run: |
+          set -euo pipefail
+          west build -p always -s zmk/app -b xiao_ble//zmk -d build-right -- \
+            -DSHIELD=totem_right \
+            -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
+          test -s build-right/zephyr/zmk.uf2
+          cp build-right/zephyr/zmk.uf2 totem_dvorak_right_xiao_ble.uf2
+
+      - name: Publish both flashable UF2s
+        uses: actions/upload-artifact@v4
+        with:
+          name: totem-dvorak-xiao-uf2
+          path: |
+            totem_dvorak_left_xiao_ble.uf2
+            totem_dvorak_right_xiao_ble.uf2
+          if-no-files-found: error
