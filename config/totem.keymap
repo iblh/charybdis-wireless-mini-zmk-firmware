@@ -69,30 +69,24 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
                 base_layer {
-// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "BASE"                              ;
-// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
-//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     A     ┃     R     ┃     S     ┃     T     ┃     D     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
-// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃     Q     ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
-// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃           ┃   BSPC    ┃
-//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
- bindings = <
-// US Dvorak / 38-key TOTEM. Left central, right peripheral. Host OS input source: US.
-                &kp QUOT    &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
-                &mt LGUI A  &mt LALT O  &mt LCTRL E &mt LSHFT U &kp I           &kp D       &mt RSHFT H &mt RCTRL T &mt RALT N  &mt RGUI S
-    &kp ESC     &kp SEMI    &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &kp FSLH
-                                        &kp DEL     &lt NAV TAB   &kp SPACE       &kp RET     &lt SYM ESC   &kp BSPC
+                    label = "DVORAK";
 
-                        >;
+                    // Physical arrangement, viewed from the front:
+                    // LEFT:  '  ,  .  P  Y       RIGHT: F  G  C  R  L
+                    //        A  O  E  U  I              D  H  T  N  S
+                    //   ESC  ;  Q  J  K  X              B  M  W  V  Z  /
+                    //          DEL TAB SPACE            ENTER ESC BSPC
+                    //
+                    // Physical LEFT must run totem_left; RIGHT must run totem_right.
+                    // Reversed images mirror both halves and reverse the columns.
+                    // Host input source should be US, not Dvorak.
+                    bindings = <
+                        &kp QUOT    &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
+                        &mt LGUI A  &mt LALT O  &mt LCTRL E &mt LSHFT U &kp I           &kp D       &mt RSHFT H &mt RCTRL T &mt RALT N  &mt RGUI S
+            &kp ESC     &kp SEMI    &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &kp FSLH
+                                                &kp DEL     &lt NAV TAB   &kp SPACE       &kp RET     &lt SYM ESC   &kp BSPC
+                    >;
                 };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
 
                 nav_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
