@@ -1,22 +1,22 @@
-name: TOTEM Dvorak UF2 (isolated)
+name: TOTEM Dvorak V2 · Left + Right + Reset
 on:
   push:
     branches:
-      - totem-dvorak-20261102
+      - totem-dvorak-v2-20261109
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  build-totem:
+  build-totem-dvorak-v2:
     runs-on: ubuntu-latest
     container: zmkfirmware/zmk-build-arm:stable
     steps:
-      - name: Checkout Dvorak keymap branch
+      - name: Checkout isolated TOTEM Dvorak branch
         uses: actions/checkout@v4
 
-      - name: Obtain official TOTEM shield and ZMK toolchain
+      - name: Prepare official TOTEM shield + ZMK toolchain
         shell: bash
         run: |
           set -euo pipefail
@@ -27,7 +27,7 @@ jobs:
           west update
           west zephyr-export
 
-      - name: Build TOTEM left (central)
+      - name: Build physical LEFT (central)
         shell: bash
         run: |
           set -euo pipefail
@@ -36,9 +36,9 @@ jobs:
             -DSHIELD=totem_left \
             -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
           test -s build-left/zephyr/zmk.uf2
-          cp build-left/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/totem_dvorak_left_xiao_ble.uf2"
+          cp build-left/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/TOTEM_Dvorak_LEFT.uf2"
 
-      - name: Build TOTEM right (peripheral)
+      - name: Build physical RIGHT (peripheral)
         shell: bash
         run: |
           set -euo pipefail
@@ -47,13 +47,40 @@ jobs:
             -DSHIELD=totem_right \
             -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
           test -s build-right/zephyr/zmk.uf2
-          cp build-right/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/totem_dvorak_right_xiao_ble.uf2"
+          cp build-right/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/TOTEM_Dvorak_RIGHT.uf2"
 
-      - name: Publish both flashable UF2s
+      - name: Build optional XIAO settings-reset image (both halves)
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd totem-source
+          west build -p always -s zmk/app -b xiao_ble//zmk -d build-settings-reset -- \
+            -DSHIELD=settings_reset \
+            -DZMK_CONFIG="$GITHUB_WORKSPACE/totem-source/config"
+          test -s build-settings-reset/zephyr/zmk.uf2
+          cp build-settings-reset/zephyr/zmk.uf2 "$GITHUB_WORKSPACE/TOTEM_XIAO_SETTINGS_RESET.uf2"
+
+      - name: Verify names, file sizes, UF2 magic
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          for name in ["TOTEM_Dvorak_LEFT.uf2", "TOTEM_Dvorak_RIGHT.uf2", "TOTEM_XIAO_SETTINGS_RESET.uf2"]:
+              payload = Path(name).read_bytes()
+              assert len(payload) >= 8192 and len(payload) % 512 == 0, (name, len(payload))
+              assert payload[0:4] == bytes.fromhex("5546320a"), (name, payload[:4].hex())
+              assert payload[4:8] == bytes.fromhex("57515d9e"), (name, payload[4:8].hex())
+              print(name, len(payload), "bytes — UF2 header valid")
+          PY
+
+      - name: Publish named UF2 firmware and README
         uses: actions/upload-artifact@v4
         with:
-          name: totem-dvorak-xiao-uf2
+          name: TOTEM_Dvorak_V2_Left_Right_Reset
           path: |
-            totem_dvorak_left_xiao_ble.uf2
-            totem_dvorak_right_xiao_ble.uf2
+            TOTEM_Dvorak_LEFT.uf2
+            TOTEM_Dvorak_RIGHT.uf2
+            TOTEM_XIAO_SETTINGS_RESET.uf2
+            TOTEM_DVORAK_V2_README.md
           if-no-files-found: error
