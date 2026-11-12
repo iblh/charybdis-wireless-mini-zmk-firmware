@@ -34,6 +34,25 @@ case "$KEYMAP" in qwerty|touch_modes) ;; *) echo "Unsupported keymap: $KEYMAP" >
 cp "$ROOT/config/keymaps/$KEYMAP.keymap" "$STAGED_CONFIG/charybdis_dongle.keymap"
 MODE_CONF=""
 if [ "$KEYMAP" = touch_modes ]; then MODE_CONF=";$STAGED_CONFIG/dongle_prospector/dongle_prospector_input_modes.conf"; fi
+case "${PROSPECTOR_LEFT_RECOVERY:-false}" in
+  false) ;;
+  true|v2)
+    if [ "$KEYMAP" != touch_modes ]; then echo 'Recovery requires Touch modes' >&2; exit 1; fi
+    MODE_CONF="$MODE_CONF;$STAGED_CONFIG/diagnostics/left-slot-recovery.conf"
+    if [ "${PROSPECTOR_LEFT_RECOVERY}" = v2 ]; then
+      MODE_CONF="$MODE_CONF;$STAGED_CONFIG/diagnostics/left-slot-recovery-v2.conf"
+    fi ;;
+  *) echo 'Recovery must be true, false or v2' >&2; exit 1 ;;
+esac
+case "${PROSPECTOR_STUDIO_USB:-false}" in
+  false) ;;
+  true)
+    if [ "$KEYMAP" != touch_modes ] || [ "${PROSPECTOR_LEFT_RECOVERY:-false}" != false ]; then
+      echo 'Studio USB requires normal Touch modes, without recovery' >&2; exit 1
+    fi
+    MODE_CONF="$MODE_CONF;$STAGED_CONFIG/diagnostics/studio-usb.conf" ;;
+  *) echo 'Studio USB must be true or false' >&2; exit 1 ;;
+esac
 CONF="$STAGED_CONFIG/dongle_prospector"
 LAYOUT="$STAGED_CONFIG/dongle_prospector_layouts"
 PRISTINE_MODE=auto

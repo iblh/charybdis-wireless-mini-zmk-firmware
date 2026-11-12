@@ -1,0 +1,78 @@
+{
+  "release": "T5-11",
+  "role": "Dongle ONLY, explicit maintenance image",
+  "artifact": "prospector-dongle-left-slot-recovery.uf2",
+  "sha256": "b0f990d98a51f9003505262cc13af96f8e5f11b4330a7b946e61e8e1d8a89f1f",
+  "build_info": {
+    "PROSPECTOR_SOURCE_ID": "A31BE3",
+    "PROSPECTOR_BUILD_TIME": "11-02 00:08"
+  },
+  "firmware_base_sha": "d1d0c89a293138f531270e23d40b3670a9852754",
+  "module_base_sha": "dfd0a7bbc4e36a6fa1615b76f5f7bfd1d308a182",
+  "working_tree_changes_included": true,
+  "build_directory": "firmware/build/prospector-dongle-left-recovery",
+  "flash_linked_bytes": 503328,
+  "ram_static_bytes": 216578,
+  "application_start": "0x26000",
+  "application_end": "0xA0F00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 49408,
+  "actual_elf_init_entries": {
+    "ble": "0x85818",
+    "central": "0x85828",
+    "observer": "0x85830"
+  },
+  "protected_slot": 0,
+  "target_slot": 1,
+  "marker_path": "prospector_left_repair/v1",
+  "one_time_guard": "Persist exact old identity before mutation; persist completion including initial empty-slot no-op; future boots never clear new identity",
+  "mutation_scope": [
+    "settings_delete ble/peripheral_addresses/1",
+    "bt_unpair BT_ID_DEFAULT with exact stored old slot1 address",
+    "settings_save_one prospector_left_repair/v1 only"
+  ],
+  "right_preservation": "Guard right stored address + live bond; compare persistent right address/key bytes after deletion; never unpair right or ANY/NULL",
+  "right_and_left_uf2": "unchanged",
+  "recovery_disabled_check": "PASS application payload identical to accepted r2 except SOURCE/build time",
+  "device_result_labels": [
+    "LEFT CLEARED",
+    "LEFT SLOT EMPTY",
+    "RIGHT NOT FOUND",
+    "BAD SLOT DATA",
+    "SLOT CHANGED",
+    "STORAGE ERROR",
+    "UNPAIR ERROR",
+    "VERIFY ERROR"
+  ],
+  "hardware_acceptance": "PARTIAL PASS 2026-11-03: user observes LEFT CLEARED, K1 ON and K2 ON; original right pairing preserved and new bare left joined; no full left matrix validation",
+  "source_sha256": {
+    "module/src/left_slot_recovery.c": "2a243c1f14caac16802368dfab12f2b682ebbdf78b883729d0bc36e3d45fdbdc",
+    "module/include/prospector/left_slot_recovery.h": "a28796eb46d99bca11ecb36834fc6d5ea2378790adafcab73c289efdbcbf93f5",
+    "module/tools/generate_scan_policy.py": "78d209452ad426aadf13f68de0114a7ee122f64111b8a946af78a2c07a161648",
+    "module/tools/test_left_slot_recovery.py": "2a66865db3ef4a97a5441c673777d71695a43c15293657b400212156072f7057",
+    "module/boards/shields/prospector_adapter/src/device_screen.c": "a22d16c9759881cf42ebd03c72d763bc987c8c9aa6c91aa95d188ae686ced7f2",
+    "module/Kconfig": "2e7fe7f06c39001fb5448962193403a9ec1668fa4ec8490aa353385ca3d46fcd",
+    "module/CMakeLists.txt": "490de1075b8cc7fcb83f28577a8671ab76e6261d2eed8372903b7c0d57f6e3f9",
+    "firmware/config/diagnostics/left-slot-recovery.conf": "1c605ae5a9d20f0fbbe6aab42f58c39c16cb0f27cec822f8e625b7675e17cc6a",
+    "firmware/docs/prospector-touch/scripts/build-touch-only.sh": "0767c21a27adc61b825adfb7f0bc61f4ae44016782bef98af87be742667b3493",
+    "firmware/docs/prospector-touch/scripts/build-touch-only-container.sh": "f39bd05d0311c60c9b130d8fb629e01e64682db5cf55593d196af46af9a09e95"
+  },
+  "config_sha256": "193096f4f74b9ce9cde1f430131de97028139e5b608ffb7f6ad68c0337e80418",
+  "dts_sha256": "56f9e71eb618f97bd0bb5cf04ca46307da1eb791882b00e09d196a0695ac1474",
+  "normal_build_guard": "default n; enabled only with PROSPECTOR_LEFT_RECOVERY=true and touch_modes",
+  "global_settings_reset": false,
+  "tests": [
+    "native actual recovery + generated finish_init gate + pinned key path encoder",
+    "real LVGL device/mode/confirmation/peripheral regression with harmless maintenance mock",
+    "maintenance and recovery-disabled Docker/west builds",
+    "UF2 bootloader limit and actual ELF init order",
+    "original r2/right/left delivered artifacts SHA unchanged"
+  ],
+  "user_acceptance": {
+    "date": "2026-11-03",
+    "device_result": "LEFT CLEARED",
+    "slot0": "ON",
+    "slot1": "ON",
+    "scope": "right preserved and new bare left connected; left key scanning and full dual typing not tested"
+  }
+}

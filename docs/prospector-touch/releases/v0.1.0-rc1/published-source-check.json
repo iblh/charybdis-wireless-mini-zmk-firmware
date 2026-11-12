@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-12",
+  "module_sha": "1345b3e91e23b8686f2b8b3e121515c6b3e52e84",
+  "delivered_original_uf2_sha256": "35357d55b43cf1f672383f56f135170d09c878382713d9695d667adffb57a0a6",
+  "source_check_uf2_sha256": "dedd6ce104f0724e43efef02b05312689a900dc9a16929ffa4f855b794609c94",
+  "source_check_directory": "firmware/build/prospector-dongle-rc1-source-check",
+  "source_check_metadata": {
+    "PROSPECTOR_SOURCE_ID": "8B5BB7",
+    "PROSPECTOR_BUILD_TIME": "11-12 01:39"
+  },
+  "original_metadata": {
+    "PROSPECTOR_SOURCE_ID": "A9EA70",
+    "PROSPECTOR_BUILD_TIME": "11-10 23:28"
+  },
+  "application_bytes": 523776,
+  "byte_differences_before_normalization": 11,
+  "result": "PASS identical application payload except SOURCE and build time; effective config and DTS byte-identical",
+  "static_ram_bytes": 225320,
+  "linked_flash_bytes": 523564,
+  "uf2_end": "0xA5E00",
+  "uf2_bootloader_headroom_bytes": 29184,
+  "actual_elf_order": "PASS BLE/settings 0x88884 -> central 0x88894 -> observer 0x8889c",
+  "remote_ci": "not run; no full-matrix workflow triggered"
+}

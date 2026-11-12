@@ -1,0 +1,59 @@
+{
+  "release": "v0.1.0-rc1",
+  "created_on": "2026-11-12",
+  "status": "release candidate, not fully accepted stable",
+  "policy": "freeze original binaries; no reflash required for existing working setup",
+  "module_source_commit": "1345b3e91e23b8686f2b8b3e121515c6b3e52e84",
+  "firmware_source_ref": "feat/touch-no-sensor; exact commit is the GitHub draft release target",
+  "source_equivalence": "published-source-check.json; rebuilt application identical except SOURCE/build time",
+  "files": [
+    {
+      "bundle_name": "dongle.uf2",
+      "local_path": "build/prospector-dongle-controls-usb.uf2",
+      "role": "Dongle USB central only",
+      "version": "T5-12-USB",
+      "source_id": "A9EA70",
+      "sha256": "35357d55b43cf1f672383f56f135170d09c878382713d9695d667adffb57a0a6"
+    },
+    {
+      "bundle_name": "left.uf2",
+      "local_path": "build/prospector-left-link-test.uf2",
+      "role": "left BLE peripheral only; normal matrix firmware, not synthetic test input",
+      "sha256": "a08fafd75ea6732cebd80596c7761928c449d4beca0c6de9e91f320c60fc6a9f"
+    },
+    {
+      "bundle_name": "right.uf2",
+      "local_path": "build/prospector-right-hci-cpi800-att3.uf2",
+      "role": "right BLE peripheral only",
+      "cpi": 800,
+      "att_tx_count": 3,
+      "report_gate_ms": 8,
+      "clockwise_rotation_degrees": 15,
+      "contains_diagnostic_instrumentation": true,
+      "sha256": "c471b19320f3ef6f4f5a26327a722d461a234f319e9ae7e6f6285b43f6082246"
+    }
+  ],
+  "excluded_from_bundle": [
+    "settings_reset",
+    "bootloader",
+    "left-slot maintenance v1/v2",
+    "BLE scan experiments",
+    "unvalidated KeyBeacon changes"
+  ],
+  "acceptance": {
+    "passed": [
+      "user reports flashed without problems",
+      "left and right both connect",
+      "USB Studio/KeyPeek service responds and reports locked state"
+    ],
+    "pending": [
+      "unlock and read full keymap in browser",
+      "full shortcut and mouse-key/scroll/drag usage",
+      "both-side power-cycle reconnect and long sessions",
+      "macOS/Windows USB-switch testing",
+      "sleep/wake regression on T5-12 variant",
+      "right diagnostic instrumentation removal and A/B before stable"
+    ]
+  },
+  "keybeacon_status": "source research only; no KBP or desktop live-status support added"
+}

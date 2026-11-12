@@ -6,12 +6,13 @@
 - [项目入口、构建与历史验证记录](docs/prospector-touch/README.md)
 - [MAC-DV / WIN-DV / GAME 键位、刷写及首次配对](docs/prospector-touch/docs/11-input-modes-guide.md)
 - [当前验收状态](docs/prospector-touch/docs/06-roadmap-and-acceptance.md)
-- [T5-09B 当前基线、优化结果与后续](docs/prospector-touch/docs/27-current-baseline-and-next-steps.md)
+- [当前v0.1.0-rc1候选包与验收边界](docs/prospector-touch/releases/v0.1.0-rc1/README.md)
+- [KeyBeacon及USB桌面状态窗评估](docs/prospector-touch/docs/33-keybeacon-assessment.md)
 
-Touch UI 支持 Classic / Field / Operator，左右滑切换外观，下滑亮度、上滑设备页。
-触屏、真实调光和设备页确认刷机已验证；T5-09B右侧自动连接、断电重连通过，用户确认轨迹球明显改善。
-双侧同时在线、完整三模式快捷键覆盖与长时间稳定性仍待验收。
-仓库的 `config/west.yml` 固定了本地测试使用的依赖版本。
+Touch UI支持Classic / Field / Operator，左右滑切布局，下滑亮度，上滑设备页。
+2026-11-12用户确认T5-12已刷入、没有问题、左右均连接；USB Studio服务响应，网页提示锁定时在设备页解锁。
+长时间使用、完整快捷键、USB切换及新版休眠回归单独验收。当前三份UF2冻结为RC1，不要求因整理重新刷写。
+右侧保持800CPI / ATT3 / 8ms，仍含诊断；正式stable之前再收敛。仓库固定依赖，无KeyBeacon实验改动。
 
 此仓库负责硬件、键位和构建；UI/行为在独立的
 [module 仓库](https://github.com/iblh/prospector-zmk-module/tree/feat/touch-no-sensor)。
@@ -19,8 +20,10 @@ Touch UI 支持 Classic / Field / Operator，左右滑切换外观，下滑亮�
 
 ```bash
 # 从两个 clone 的共同父目录运行，只编译 Touch Dongle
-PROSPECTOR_KEYMAP=touch_modes SKIP_WEST_UPDATE=true bash firmware/docs/prospector-touch/scripts/build-touch-only.sh
+PROSPECTOR_STUDIO_USB=true PROSPECTOR_KEYMAP=touch_modes SKIP_WEST_UPDATE=true bash firmware/docs/prospector-touch/scripts/build-touch-only.sh
 ```
+
+首次获取West依赖时省略`SKIP_WEST_UPDATE=true`。单目标构建不运行全矩阵。
 
 以下为上游通用说明；其中 QWERTY 布局、传感器和蓝牙主机配置不代表本 Touch 模式配置。
 

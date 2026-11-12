@@ -22,7 +22,7 @@
   "pmw_sensor_enabled": false,
   "settings_reset": false,
   "bond_clear_on_start": false,
-  "hardware_acceptance": "PENDING: build and UF2 validation only; new controller can join only if Dongle has a free peripheral address slot",
+  "hardware_acceptance": "PAIR PASS 2026-11-03 after targeted old-slot recovery: user confirms K1 ON/K2 ON. Bare board has no switches; left matrix typing not verified",
   "dongle_and_right": "existing accepted UF2 hashes verified unchanged",
   "build_script_changes": "single-side option and read-only sibling module; no runtime left config or GPIO changes",
   "build_command": "PROSPECTOR_PERIPHERAL_SIDE=left bash firmware/docs/prospector-touch/scripts/build-touch-peripherals.sh",

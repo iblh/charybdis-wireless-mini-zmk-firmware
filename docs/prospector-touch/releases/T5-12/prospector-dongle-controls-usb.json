@@ -1,0 +1,103 @@
+{
+  "release": "T5-12",
+  "date": "2026-11-10",
+  "role": "Dongle ONLY, normal UI and USB Studio candidate",
+  "artifact": "prospector-dongle-controls-usb.uf2",
+  "sha256": "35357d55b43cf1f672383f56f135170d09c878382713d9695d667adffb57a0a6",
+  "build_directory": "firmware/build/prospector-dongle-controls-usb",
+  "version": "T5-12-USB",
+  "build_info": {
+    "PROSPECTOR_SOURCE_ID": "A9EA70",
+    "PROSPECTOR_BUILD_TIME": "11-10 23:28"
+  },
+  "firmware_base_sha": "d1d0c89a293138f531270e23d40b3670a9852754",
+  "module_base_sha": "dfd0a7bbc4e36a6fa1615b76f5f7bfd1d308a182",
+  "working_tree_changes_included": true,
+  "flash_linked_bytes": 523564,
+  "ram_static_bytes": 225320,
+  "application_start": "0x26000",
+  "application_end": "0xA5E00",
+  "bootloader_limit": "0xAD000",
+  "bootloader_headroom_bytes": 29184,
+  "actual_elf_init_entries": {
+    "ble": "0x88884",
+    "central": "0x88894",
+    "observer": "0x8889c"
+  },
+  "lvgl_heap_config_bytes": 65536,
+  "ui_heap_test": {
+    "architecture": "32-bit x86 object pointers under qemu-i386, same pointer width as target",
+    "configured_pool_bytes": 65536,
+    "max_used_bytes": 36448,
+    "largest_free_block_end_bytes": 24788,
+    "reopen_cycles": 120,
+    "screen_switches": 120,
+    "hardware": false
+  },
+  "studio_usb": true,
+  "studio_ble": false,
+  "left_recovery_enabled": false,
+  "left_recovery_marker": null,
+  "right_preservation": "right UF2 unchanged; maintenance checks persistent K1 address/key bytes before/after exact old K2 unpair",
+  "global_settings_reset": false,
+  "hardware_acceptance": "PARTIAL PASS 2026-11-12: user reports all images flashed without problems and both halves connect; browser RPC, full shortcut coverage, sleep/wake on this variant and long-session tests tracked separately",
+  "config_sha256": "2e7192f382493b7399b7bd01bd77ba26e8b0651e27baab6a1c9735e3885c8ce7",
+  "dts_sha256": "2f4acb3480f24d542b12bd7a666a8ea02fa6632084c9df61e3c2726470ea195a",
+  "tests": [
+    "single target Docker/west",
+    "UF2 limit, vectors and sequence",
+    "actual ELF BLE/central/observer order",
+    "native device service, input modes, scan policy/startup, recovery generations 1/2",
+    "32-bit 64KB real LVGL controls lifecycle/peripheral regression",
+    "generated DTS 9 x 41 unchanged bindings"
+  ],
+  "accepted_artifact_sha256": {
+    "prospector-dongle-scan-policy-r2.uf2": "99e0b1f4914b8b6eb4ccd257614216b065567e0cda721815bf7ab445a9df4e6c",
+    "prospector-right-hci-cpi800-att3.uf2": "c471b19320f3ef6f4f5a26327a722d461a234f319e9ae7e6f6285b43f6082246",
+    "prospector-left-link-test.uf2": "a08fafd75ea6732cebd80596c7761928c449d4beca0c6de9e91f320c60fc6a9f",
+    "prospector-dongle-left-slot-recovery.uf2": "b0f990d98a51f9003505262cc13af96f8e5f11b4330a7b946e61e8e1d8a89f1f"
+  },
+  "source_sha256": {
+    "firmware/config/diagnostics/left-slot-recovery-v2.conf": "2b7f8f730d00ac3062b76cd8f3316b7a067e871d2d59db22eb42e437597686f2",
+    "firmware/config/diagnostics/left-slot-recovery.conf": "1c605ae5a9d20f0fbbe6aab42f58c39c16cb0f27cec822f8e625b7675e17cc6a",
+    "firmware/config/diagnostics/studio-usb.conf": "257d74205de5ae43f32cb7fadb58e283ebb9dcb866882fd12d88ba485e4e10b6",
+    "firmware/config/keymaps/touch_modes.keymap": "cc9f2d8abd62eb050395809ffdc852921980802ef0b63c4a0a4b22f094d2b157",
+    "module/CMakeLists.txt": "490de1075b8cc7fcb83f28577a8671ab76e6261d2eed8372903b7c0d57f6e3f9",
+    "module/Kconfig": "2a8996fc7c186c0a8d99fc3c31f5a0c6987049fb03de2b25898fcc75c30e5076",
+    "module/boards/shields/prospector_adapter/include/control_style.h": "ecd2e3c58cd868537a21f1cafd055cffda033ac1090ddf052643555810c166fa",
+    "module/boards/shields/prospector_adapter/src/device_screen.c": "b4d52737987d0ede7d8a379a9c5aca20b591ba17013797868d937274d47d25b0",
+    "module/boards/shields/prospector_adapter/src/device_service.c": "9d9ddb20bbd5b5cb1561f6de4f0417061a17a32d4a7264fed43f5720ef979477",
+    "module/boards/shields/prospector_adapter/src/touch_settings.c": "0eeebe7429ca9445e5285ffd86f3d290e803a3d322e58439d829a18d5b3d7ab3",
+    "module/include/prospector/device_service.h": "5abec1d03cca8c20e5be12086c5adf890d6d95c75a3b62883a48a7983acb4a0e",
+    "module/include/prospector/left_slot_recovery.h": "a28796eb46d99bca11ecb36834fc6d5ea2378790adafcab73c289efdbcbf93f5",
+    "module/src/behaviors/behavior_input_mode.c": "15101f6f03235a16e103fb3d70c05fb26a2e6dfcdc828c6ca0dc92fa014c1253",
+    "module/src/behaviors/behavior_shortcut.c": "3ef35f1423d60668b30fe34b00b2b562566922033bef53c951a4e2d428f2cf16",
+    "module/src/left_slot_recovery.c": "98a9bd51e1b89e77664c62e73c409be87dfeb1b2a87aa43ebd94741376fe4d48",
+    "module/tools/generate_scan_policy.py": "78d209452ad426aadf13f68de0114a7ee122f64111b8a946af78a2c07a161648",
+    "module/tools/operator_host/CMakeLists.txt": "33ef8b5a3b1700f5e3acfa0a5dec2ca20bdeb4b5e6d4833c7e584921552e50d3",
+    "module/tools/operator_host/lv_conf.h": "9d94e3077fe00ca976615fc62acce3ec43faa24a3fac74e97c1bd6477425e52c",
+    "module/tools/operator_host/src/device_screen_tests.c": "e79288450c4118e9bef48649ec6fa5163f5b9289d3b0aec2ee01b88fdf261bcf",
+    "module/tools/operator_host/src/host_device_service.c": "ab1c5b0b34ac70ad1e453eb212f8770b99dbf893476d24acd3c7d4e935c8a2f5",
+    "module/tools/operator_host/src/host_touch_brightness.c": "c3acf6f5c7000a44485c12ed8249580fc6948b873886def4e48339be90716b5f",
+    "module/tools/operator_host/src/main.c": "ed4d87e0f3a787a08f224e2f7ebd2a4f7ae0a357c011d29fd965a262aa424107",
+    "module/tools/test_controls_heap_container.sh": "46bd9b87c3320d68bda10bc4435ee8a9f6c50a462d4c0309858d49e91ef0d555",
+    "module/tools/test_device_service.py": "2bed88bc16553b700eda0488392232de59bd0fde048279f48a4473d547262c9b",
+    "module/tools/test_input_modes.py": "b76f4e7a280b5b3b7b26600fa451eed07dc2b6771e01a7e6a803c45f575077ba",
+    "module/tools/test_left_slot_recovery.py": "ccfdb1c54929d05da21f461d5be6a087b60cbed03e3b9499dc4e6313e0930dd5"
+  },
+  "user_acceptance": {
+    "date": "2026-11-12",
+    "report": "all flashed, no problems, left and right can connect",
+    "scope": [
+      "boot",
+      "both halves connected"
+    ],
+    "separate_checks": [
+      "USB Studio/KeyPeek readback",
+      "full keymap shortcuts",
+      "sleep/wake on this variant",
+      "USB switch and long-session stability"
+    ],
+    "usb_followup": "2026-11-12: Studio/KeyPeek connects over USB and returns standard locked state; unlock/readback pending"
+  }
+}
