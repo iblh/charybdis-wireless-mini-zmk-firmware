@@ -14,7 +14,7 @@ Docker/West 右侧单目标和 UF2 guard 已通过。尚无实机方向或连续
 原 West driver 和正常右侧 UF2 均保留，左侧和 Dongle 无需随此候选刷写。
 
 操作、参数含义、比较边界、回退与当前鼠标键位见
-[完整测试指南](../../docs/16-trackball-calibration-and-performance.md)。
+[完整测试指南](../../archive/history/docs/16-trackball-calibration-and-performance.md)。
 
 这是临时诊断候选，不能直接作为最终电池续航/游戏延迟结论。稳定后再制作关闭
 统计的正常版。未增加中键绑定、自动鼠标层或滚动锁定，未清除蓝牙绑定。

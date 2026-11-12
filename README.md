@@ -3,11 +3,10 @@
 本分支面向 Pro Micro nRF52840（nice!nano v2 兼容）+ Waveshare ST7789V2/CST816T，
 不使用环境光传感器。硬件引脚以 `config/dongle_prospector/dongle_prospector_touch.overlay` 为准。
 
-- [项目入口、构建与历史验证记录](docs/prospector-touch/README.md)
-- [MAC-DV / WIN-DV / GAME 键位、刷写及首次配对](docs/prospector-touch/docs/11-input-modes-guide.md)
-- [当前验收状态](docs/prospector-touch/docs/06-roadmap-and-acceptance.md)
-- [当前v0.1.0-rc1候选包与验收边界](docs/prospector-touch/releases/v0.1.0-rc1/README.md)
-- [KeyBeacon及USB桌面状态窗评估](docs/prospector-touch/docs/33-keybeacon-assessment.md)
+- [项目入口](docs/prospector-touch/README.md)
+- [使用指南：固件、键位、鼠标、刷写/配对、Studio解锁](docs/prospector-touch/USER-GUIDE.md)
+- [开发指南：硬件、固定依赖、构建和文件清理](docs/prospector-touch/DEVELOPMENT.md)
+- [当前状态与待验收事项](docs/prospector-touch/STATUS.md)
 
 Touch UI支持Classic / Field / Operator，左右滑切布局，下滑亮度，上滑设备页。
 2026-11-12用户确认T5-12已刷入、没有问题、左右均连接；USB Studio服务响应，网页提示锁定时在设备页解锁。

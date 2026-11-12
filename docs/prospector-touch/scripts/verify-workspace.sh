@@ -39,4 +39,4 @@ for item in firmware module; do
  echo
  echo '[Docker installation]'
  command -v docker >/dev/null && docker --version || echo 'Docker missing/not on PATH'
- echo "NOTE: This report is read-only. Compare with SOURCE_MANIFEST.json; don't reset a diverged HEAD."
+ echo "NOTE: This report is read-only. Compare STATUS.md and config/west.yml; don't reset a diverged HEAD."

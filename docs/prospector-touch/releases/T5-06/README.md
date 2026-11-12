@@ -3,7 +3,7 @@
 最新日志中 RX 与 USB 的 4438 个相邻间隔分布近似：各有 417 个 30–50ms 间隔，
 并有大量短间隔成团。USB 无错误、中央队列无丢事件，主要不均匀在进入 Dongle 时已存在。
 尚不能据此认定无线丢包、特定 BLE 参数或机械追踪就是根因。
-完整数字与下一轮步骤见 [上游节奏定位](../../docs/20-upstream-cadence-investigation.md)。
+完整数字与下一轮步骤见 [上游节奏定位](../../archive/history/docs/20-upstream-cadence-investigation.md)。
 
 新文件仅刷 **右键盘**：
 
@@ -44,7 +44,7 @@ PROSPECTOR_PIPE_TARGET=right PROSPECTOR_POINT_CPI=1600 PROSPECTOR_PIPE_CADENCE=t
 - 与上面 1600 T5-06 相比只改 CPI；Kconfig 相同、设备树仅 CPI、实际应用载荷差 2 字节。
 - 保留 8ms / 顺时针 15° / PMW、TX 诊断；键位与 BLE 配对不变。
 - 原 1600 与 Dongle 文件保留。800 版本本地构建验证通过，实机待验；不宣称修复卡顿。
-- 最新四阶段日志结论见 [实测分析](../../docs/20-upstream-cadence-investigation.md)。
+- 最新四阶段日志结论见 [实测分析](../../archive/history/docs/20-upstream-cadence-investigation.md)。
 
 复现（构建目录名省略默认 800；交付副本明确包含 `cpi800`）：
 

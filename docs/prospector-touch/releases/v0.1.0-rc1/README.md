@@ -46,5 +46,5 @@ python3 firmware/docs/prospector-touch/scripts/package-release.py firmware/docs/
 脚本核对三个原UF2的精确SHA、向量及Bootloader范围，并回读ZIP所有文件。
 清单见 [manifest](manifest.json)，独立操作说明见 [包内指南](bundle-guide.md)。
 
-[KeyBeacon/USB状态窗方案](../../docs/33-keybeacon-assessment.md) ·
-[本地整理记录](../../docs/34-cleanup-2026-11-12.md)。
+[KeyBeacon/USB状态窗方案](../../archive/history/docs/33-keybeacon-assessment.md) ·
+[本地整理记录](../../archive/history/docs/34-cleanup-2026-11-12.md)。

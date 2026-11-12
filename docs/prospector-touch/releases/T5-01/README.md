@@ -11,4 +11,4 @@ UF2 二进制保留在用户的 `firmware/build/`，不把本次提交当成正�
 
 用户已确认 T4-01 设备页和双重确认进入 NICENANO；T5-01 的真实键盘输入、
 BLE 配对、GAME、快捷键及轨迹球仍待验收。预览图片的数据来自主机 mock。
-正式复现方法见 [使用指南](../../docs/11-input-modes-guide.md)。
+正式复现方法见 [使用指南](../../archive/history/docs/11-input-modes-guide.md)。

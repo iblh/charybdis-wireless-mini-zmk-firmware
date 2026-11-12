@@ -1,7 +1,7 @@
 # T5-09：Dongle 连接数量扫描策略
 
 > **已发现实机连接回归，请勿继续刷此文件。** 屏幕启动正常，但键盘无法连接；仅回退 T5-08 可恢复。
-> 根因和替代候选见 [T5-09B](../../docs/26-scan-startup-regression.md)。原文件及哈希保留用于回归校验。
+> 根因和替代候选见 [T5-09B](../../archive/history/docs/26-scan-startup-regression.md)。原文件及哈希保留用于回归校验。
 
 只刷 **Dongle**：`firmware/build/prospector-dongle-scan-policy.uf2`。
 标识 **T5-09-SCAN / SOURCE 20BD12**。
@@ -30,5 +30,5 @@ Native直接运行实际策略/生成连接发起代码：0/1/2侧、连接中�
 Dongle回退保留：`prospector-dongle-scan-ab.uf2`，SHA
 `138184a32f64c91244749ec5cf417504d9e94becc374c4d186d7eb805e95672b`。
 
-[最短验收、技术边界与普通构建复现](../../docs/25-scan-policy-fix.md)。
+[最短验收、技术边界与普通构建复现](../../archive/history/docs/25-scan-policy-fix.md)。
 该版本含两仓库未提交修改；未运行远程CI，发布前需同步模块并更新west pin。

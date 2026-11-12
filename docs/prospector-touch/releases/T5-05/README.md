@@ -3,7 +3,7 @@
 q64 双端 150 秒日志未记录到中央队列丢事件、USB 发送错误或明显长等待。
 用户反馈按键可用，轨迹球剩余问题明确为慢速精细移动的颗粒感。
 本轮先比较 1600 CPI，保留 Dongle q64；不要求同时更换两端。
-详见 [双端分析与操作](../../docs/18-trackball-fine-motion.md)。
+详见 [双端分析与操作](../../archive/history/docs/18-trackball-fine-motion.md)。
 
 | 文件（`firmware/build/`） | 刷写目标 | FLASH / 静态 RAM | SHA-256 |
 |---|---|---|---|
@@ -46,4 +46,4 @@ JSON 记录实际源码、构建配置与产物摘要。构建通过不代表颗
 
 后续实测：用户已刷 1600 CPI 并调低主机速度，慢速颗粒感仍存在，未验收为改善。
 现启用已构建的备用 cadence Dongle，保持右侧 1600 CPI；具体步骤见
-[帧间隔采集流程](../../docs/19-cadence-test-protocol.md)。
+[帧间隔采集流程](../../archive/history/docs/19-cadence-test-protocol.md)。

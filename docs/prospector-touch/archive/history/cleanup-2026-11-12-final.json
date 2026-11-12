@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-12",
+  "removed_generated_directories": [
+    {
+      "path": "firmware/build/prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-config",
+      "logical_bytes": 149519
+    },
+    {
+      "path": "firmware/build/operator-host-cache",
+      "logical_bytes": 42270146
+    },
+    {
+      "path": "firmware/build/prospector-dongle-rc1-source-check",
+      "logical_bytes": 74689183
+    },
+    {
+      "path": "firmware/build/prospector-dongle-rc1-source-check-config",
+      "logical_bytes": 163778
+    },
+    {
+      "path": "firmware/build/prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-driver",
+      "logical_bytes": 49388
+    },
+    {
+      "path": "firmware/build/prospector-peripheral-config",
+      "logical_bytes": 149758
+    },
+    {
+      "path": "firmware/build/prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab",
+      "logical_bytes": 59599715
+    },
+    {
+      "path": "firmware/build/prospector-dongle-controls-usb-config",
+      "logical_bytes": 163778
+    },
+    {
+      "path": "firmware/build/prospector-left-peripheral",
+      "logical_bytes": 38170243
+    },
+    {
+      "path": "firmware/build/prospector-dongle-pipeline-q64-cadence-radioab-zmk",
+      "logical_bytes": 3165312
+    },
+    {
+      "path": "firmware/build/prospector-dongle-controls-usb",
+      "logical_bytes": 74872791
+    },
+    {
+      "path": "firmware/build/prospector-right-pipeline-8ms-angle15-cadence-bttrace-att3-radioab-zmk",
+      "logical_bytes": 3165312
+    },
+    {
+      "path": "firmware/build/prospector-dongle-scan-policy-r2-config",
+      "logical_bytes": 160191
+    },
+    {
+      "path": "firmware/build/previews",
+      "logical_bytes": 1714520
+    },
+    {
+      "path": "firmware/build/prospector-dongle-scan-policy-r2",
+      "logical_bytes": 71604044
+    },
+    {
+      "path": "firmware/build/prospector-dongle-scan-policy-config",
+      "logical_bytes": 160143
+    },
+    {
+      "path": "firmware/build/prospector-dongle-scan-policy",
+      "logical_bytes": 72204897
+    }
+  ],
+  "removed_generated_bytes": 442452718,
+  "new_evidence_archive": "firmware/.local-artifacts/build-evidence-2026-11-12.tar.gz",
+  "new_archive_bytes": 49445090,
+  "new_archive_sha256": "03c573dc0bdfbc44b0e3fb37f890544879f3ea0f9fdd6b36b8b6486c4359e4cb",
+  "verified_evidence_files": 7797,
+  "preserved_raw_reports": 184,
+  "preserved_live_files": 414,
+  "preserved_uf2_sha256": {
+    "prospector-dongle-scan-policy-r2.uf2": "99e0b1f4914b8b6eb4ccd257614216b065567e0cda721815bf7ab445a9df4e6c",
+    "prospector-dongle-controls-usb.uf2": "35357d55b43cf1f672383f56f135170d09c878382713d9695d667adffb57a0a6",
+    "prospector-right-hci-cpi800-att3.uf2": "c471b19320f3ef6f4f5a26327a722d461a234f319e9ae7e6f6285b43f6082246",
+    "prospector-left-link-test.uf2": "a08fafd75ea6732cebd80596c7761928c449d4beca0c6de9e91f320c60fc6a9f"
+  },
+  "preserved_release_files": {
+    "releases/v0.1.0-rc1/prospector-touch-v0.1.0-rc1.zip": "51c2bc4ecccc101b7225ef2d76d9931a062bff7e01e0fcb07d788abd7bbacc64",
+    "releases/v0.1.0-rc1/prospector-touch-v0.1.0-rc1.zip.sha256": "39b8425a49f8825632d7443b01948ee6c203fbc6aa968fb538adceb71be2a898"
+  },
+  "moved_history": "firmware/.local-artifacts/history",
+  "moved_reports": "firmware/.local-artifacts/reports",
+  "firmware_runtime_changed": false
+}

@@ -14,7 +14,7 @@ FLASH 501672B，静态RAM 213442B，UF2末端0xA0800，Bootloader限额余51200B
 双侧发现/重连、长时间稳定性和新一轮定量节奏仍待验收；未运行远程CI。
 
 旧T5-09已标记有回归，原文件保留。回退仍用T5-08 `prospector-dongle-scan-ab.uf2`。
-[根因、验证证据和最短步骤](../../docs/26-scan-startup-regression.md)。
+[根因、验证证据和最短步骤](../../archive/history/docs/26-scan-startup-regression.md)。
 
-本轮源码整理、固定模块依赖与后续任务见 [当前基线](../../docs/27-current-baseline-and-next-steps.md)。
+本轮源码整理、固定模块依赖与后续任务见 [当前基线](../../archive/history/docs/27-current-baseline-and-next-steps.md)。
 原UF2不覆盖，不要求为整理源码重刷。

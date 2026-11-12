@@ -9,4 +9,4 @@ UF2末端0x54500，旧Bootloader限额余363264B。实机连接待验收。
 Dongle r2和右侧800 CPI／ATT3／8ms文件哈希保持原值，无需重刷。
 
 全新主控需要空闲的绑定地址槽；旧左侧已绑定时不能仅凭另一侧离线就自动替换。
-不在本固件中清除配对。[参数结论、刷写、连接观察与旧绑定处理](../../docs/29-parameters-and-bare-left-test.md)。
+不在本固件中清除配对。[参数结论、刷写、连接观察与旧绑定处理](../../archive/history/docs/29-parameters-and-bare-left-test.md)。

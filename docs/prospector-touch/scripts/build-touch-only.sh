@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: bash prospector-pro-handoff/scripts/build-touch-only.sh [workspace_root]
+# Usage: bash firmware/docs/prospector-touch/scripts/build-touch-only.sh [workspace_root]
 # Docker single-target build; prefers working files from ../firmware and ../module.
 # Tested with the local Docker/West single-target build on 2026-10-23.
 set -euo pipefail

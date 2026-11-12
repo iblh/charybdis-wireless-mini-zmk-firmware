@@ -33,3 +33,6 @@ keymap-drawer/stacked/stacked-combos.png
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# Local raw reports and compressed build evidence (not source)
+.local-artifacts/

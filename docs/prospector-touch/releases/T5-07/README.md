@@ -3,7 +3,7 @@
 **2026-11-01 实机日志更新：** 用户已完成 ATT3/ATT8 两版采集，反馈区别不明显、ATT8 可能稍好。
 两轮无记录到的 SPI/队列/USB 错误；ATT8 仅减少上游等待，RX/USB 节奏未改善。
 **不将 ATT8 作为默认修复**；候选保留。DONE 的本机含义需按 buffer/controller 交付解释。
-[数据与后续定位](../../docs/22-att3-att8-results.md)。此前“待验收”指发布时状态，长期可靠性仍未验收。
+[数据与后续定位](../../archive/history/docs/22-att3-att8-results.md)。此前“待验收”指发布时状态，长期可靠性仍未验收。
 
 目标：将之前最长 32–36ms 的通知 API 调用拆成分配、提交及提交后的本地完成；
 保留 800 CPI / 8ms / 顺时针 15°。**只刷右键盘**，Dongle 和左侧不更新。
@@ -37,4 +37,4 @@ Dongle 保持 `prospector-dongle-pipeline-q64-cadence.uf2`，SHA
 `08a690eb6425ea4d9a0671316917b463615284076078eef11681ee220807a2ca`。
 
 **完整刷写、双端 150 秒采集命令、动作表、判断与其他方案研究：**
-[21 — 缓冲等待与完成诊断](../../docs/21-ble-buffer-and-completion.md)。
+[21 — 缓冲等待与完成诊断](../../archive/history/docs/21-ble-buffer-and-completion.md)。

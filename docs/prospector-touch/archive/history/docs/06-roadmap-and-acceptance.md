@@ -2,7 +2,7 @@
 
 **2026-11-12 当前基线：** 用户确认T5-12已刷入、没有问题、左右均能连接。
 当前二进制冻结为v0.1.0-rc1候选包，保留原版本和SHA，不要求因整理重刷。
-[候选包与验收边界](../releases/v0.1.0-rc1/README.md)
+[候选包与验收边界](../../../releases/v0.1.0-rc1/README.md)
 
 **2026-11-01 T5-09B 当前基线：** 用户确认T5-09屏幕正常但键盘无法连接，回退T5-08恢复。
 已定位生成central改变链接顺序，导致其Settings回调在BLE初始化时丢失；新版显式固定50/51/52顺序。
@@ -61,7 +61,7 @@ TX 67.43% 降至 RX 33.01%，USB 33.26%；本次无 SPI/队列/USB 错误。
 - [ ] 实机比较 800/1600 CPI，记录主机跟踪速度、精细直线/反向/小圆与打字回归。
 - [ ] 若仍有问题，再用收包/USB 间隔统计、主机设置与物理追踪来区分来源。
 
-见 [完整分析](18-trackball-fine-motion.md)、[候选校验](../releases/T5-05/README.md)。
+见 [完整分析](18-trackball-fine-motion.md)、[候选校验](../../../releases/T5-05/README.md)。
 
 ## 2026-10-31 T5-04：优先排查丢字与指针延迟
 
@@ -69,7 +69,7 @@ TX 67.43% 降至 RX 33.01%，USB 33.26%；本次无 SPI/队列/USB 错误。
 - 已定位源码中的 5 项中央共享队列未检查入队失败，以及 WPM/输出状态跨线程 LVGL 访问。
 - 本轮修正 UI 调用线程，加入中央 RX/USB/键码事件计数与右外设 TX 低频统计。
 - 对照候选为 Dongle q5/q64、右侧 8ms angle15/angle40；本地构建/测试记录见
-  [T5-04 清单](../releases/T5-04/README.md)，实机尚待验收。
+  [T5-04 清单](../../../releases/T5-04/README.md)，实机尚待验收。
 - [ ] 静止球时右侧快速输入不缺字；比较普通字母/主行 hold-tap，滚球同时输入。
 - [ ] 右侧测试版 NAV 的左键/右键/页面滚动/慢速操作；左侧装好后补双侧验收。
 - [ ] 对比 q5/q64 的丢事件、队列年龄、USB 等待及外设发送统计。
@@ -90,7 +90,7 @@ The user wants a coherent final product plan, but all tests must be real; do not
 统计提供 12ms/8ms 对照；本地 C/串口测试、右侧构建和 UF2 范围检查通过。
 **方向、卡顿改善、点击与滚动的实机验收仍待进行**；中键/滚动锁定/自动鼠标层
 仅列为建议，未实现。详见 [测试指南](16-trackball-calibration-and-performance.md)
-与 [T5-03 清单](../releases/T5-03/README.md)。
+与 [T5-03 清单](../../../releases/T5-03/README.md)。
 
 ## 2026-10-30 更新：第二块 PMW3610 已输出运动，固定后光学稳定性待测
 
@@ -107,7 +107,7 @@ The user wants a coherent final product plan, but all tests must be real; do not
 这些显示问题已做本地修复并回归；新的实机验收待进行。右侧 PMW3610 在电池和 USB
 供电均完全不动，根因未定；另备只加日志的右侧诊断版。
 详见 [操作、根因和测试记录](14-peripheral-state-and-trackball.md) 与
-[候选清单](../releases/T5-02/README.md)。旧版本记录按历史状态保留。
+[候选清单](../../../releases/T5-02/README.md)。旧版本记录按历史状态保留。
 
 ## Latest candidate — MAC-DV / WIN-DV / GAME, T5-01 (2026-10-24)
 

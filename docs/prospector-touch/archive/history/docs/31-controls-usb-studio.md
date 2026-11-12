@@ -122,8 +122,8 @@ PROSPECTOR_STUDIO_USB=true PROSPECTOR_BUILD_NAME=prospector-dongle-controls-usb 
 
 日志及校验清单：`firmware/build/reports/t5-12-*`、`releases/T5-12/`。未触发远程CI。
 
-[资源、SHA及真实LVGL模拟预览](../releases/T5-12/README.md)。
+[资源、SHA及真实LVGL模拟预览](../../../releases/T5-12/README.md)。
 
 2026-11-12补充：用户确认USB连接后收到标准锁提示，服务响应通过；解锁后完整读取待确认。
 历史维护/旧回退UF2现已归档至`firmware/build/archive/2026-11-12-release-prep/uf2/`，不再混放build顶层。
-已完成换板的用户不需要重复维护，当前包见 [RC1](../releases/v0.1.0-rc1/README.md)。
+已完成换板的用户不需要重复维护，当前包见 [RC1](../../../releases/v0.1.0-rc1/README.md)。

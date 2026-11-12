@@ -16,6 +16,8 @@ HANDOFF = Path(__file__).resolve().parents[1]
 FIRMWARE = next(parent for parent in HANDOFF.parents if (parent / "config/west.yml").is_file())
 ROOT = FIRMWARE.parent
 ARCHIVES = [
+    FIRMWARE / ".local-artifacts/history/2026-11-01-experiments",
+    FIRMWARE / ".local-artifacts/history/2026-11-12-release-prep/uf2",
     FIRMWARE / "build/archive/2026-11-01-experiments",
     FIRMWARE / "build/archive/2026-11-12-release-prep/uf2",
 ]

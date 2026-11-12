@@ -12,7 +12,7 @@
   后续测得 NRESET≈0V，正在排查 PCB 复位上拉，不能标记为已修复。
 
 UF2 保留在本地 `firmware/build/`；本目录保存同名 JSON 校验清单。
-操作与本地测试证据见 [诊断说明](../../docs/14-peripheral-state-and-trackball.md)。
+操作与本地测试证据见 [诊断说明](../../archive/history/docs/14-peripheral-state-and-trackball.md)。
 
 本次 module：`6299108bef48df59bdb22ef85ea57199b9ced598`。
 固件清单固定此提交。单目标构建、UF2 上限与回归测试通过，不代表轨迹球或新 UI 已实机通过。

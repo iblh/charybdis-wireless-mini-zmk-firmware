@@ -2,7 +2,7 @@
 
 **实机诊断已验证（2026-11-01）：** 新ZIP确认四段切换及结束恢复成功、HCI计数无匹配异常。
 后台扫描关闭使周期性30–50ms接收空档显著减少，重新开启复现；用户确认有改善仍有颗粒感。
-诊断候选会恢复原扫描，尚非扫描策略修复版。见 [完整实测结论](../../docs/24-scan-ab-results-and-fix.md)。
+诊断候选会恢复原扫描，尚非扫描策略修复版。见 [完整实测结论](../../archive/history/docs/24-scan-ab-results-and-fix.md)。
 下面“待验收”保留发布时历史状态；长期可靠性和正式修复仍待验收。
 
 本地 Build/native/实际链接/UF2 检查通过；实机未验收，未自动刷写，不宣称卡顿改善。
@@ -40,5 +40,5 @@ Dongle SHA-256：`138184a32f64c91244749ec5cf417504d9e94becc374c4d186d7eb805e9567
 - Dongle `prospector-dongle-pipeline-q64-cadence.uf2`，SHA
   `8a857e1d02c95104f95f7cb539725630095967db64d53758d9accba160715be6`。
 
-[刷写、一条采集命令、动作与决策标准](../../docs/23-hci-and-scan-ab.md)。
+[刷写、一条采集命令、动作与决策标准](../../archive/history/docs/23-hci-and-scan-ab.md)。
 源码/工具快照、依赖 SHA、有效配置、设备树 hash 见两个 JSON 清单。

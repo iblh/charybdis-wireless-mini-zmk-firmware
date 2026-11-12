@@ -37,7 +37,7 @@ T5-02 从共享连接观察器和 ZMK 电量缓存读取两个槽的完整快照
 
 候选：`firmware/build/prospector-touch-peripheral-sync.uf2`，T5-02，SRC **93CC06**。
 SHA-256：`43ce36cfb6475af1d94b85758471771ceb9f2135bce9beaabea83f426bbe0be1`。
-同名 `.json` 和 [版本记录](../releases/T5-02/README.md) 含完整清单。
+同名 `.json` 和 [版本记录](../../../releases/T5-02/README.md) 含完整清单。
 **这些是本地检查，新固件的实机验收仍待用户确认。**
 
 通过 Dongle 设备页进入 NICENANO 后：

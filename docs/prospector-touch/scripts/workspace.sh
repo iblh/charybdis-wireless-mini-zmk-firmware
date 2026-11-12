@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Source this file; works from the tracked docs folder or the legacy shortcut.
+# Source this file; locates the shared workspace from the canonical tracked docs folder.
 prospector_workspace() {
   local current
   current="$(cd "$1" && pwd -P)"

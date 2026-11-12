@@ -15,4 +15,4 @@ FLASH503328B、静态RAM216578B、UF2末端0xA0F00，旧Bootloader限制余49408
 用户之后再次换板时必须使用 T5-12 的独立 v2 维护事务，旧版不会重新清槽。
 
 右侧、新左侧固件均不改；日用r2回退文件原路径和SHA保持原值。
-[刷写、结果标签、保护机制及回退](../../docs/30-left-slot-recovery.md)。
+[刷写、结果标签、保护机制及回退](../../archive/history/docs/30-left-slot-recovery.md)。

@@ -27,7 +27,7 @@ Build、native、实际LVGL、ELF和UF2校验通过；未运行新远程CI。
 `t5-12-left2-native.log`、`t5-12-dts-contract.log`、`t5-12-controls-usb-build-final2.log`、`t5-12-left2-build.log`。
 两个JSON分别记录SHA-256、配置、资源及源码指纹。
 
-[逐步刷机、配对和浏览器查看键位](../../docs/31-controls-usb-studio.md)。
+[逐步刷机、配对和浏览器查看键位](../../archive/history/docs/31-controls-usb-studio.md)。
 
 下面是实际LVGL源码的主机模拟图，版本/日期/SOURCE/连接状态为模拟值，不是实机验收照片。
 
